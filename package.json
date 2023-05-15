@@ -1,7 +1,7 @@
 {
   "name": "ezlion",
   "version": "1.0.0",
-  "description": "A data retrieval project for Monster Hunter Frontier Z",
+  "description": "A data retrieval and translation project for Monster Hunter Frontier Z",
   "main": "commitlint.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
