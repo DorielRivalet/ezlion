@@ -1,0 +1,20 @@
+{
+  "name": "ezlion",
+  "version": "1.0.0",
+  "description": "A data retrieval project for Monster Hunter Frontier Z",
+  "main": "commitlint.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "commit"
+  },
+  "keywords": [
+    "monster-hunter"
+  ],
+  "author": "Doriel Rivalet",
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
+    "@commitlint/prompt-cli": "^17.6.3"
+  }
+}
