@@ -1,0 +1,16 @@
+syntax = "proto3";
+package ezlion;
+
+/// Defines the structure of an item (potions, decorations, etc.)
+message Item {
+  /// Required field indicating the ID of the item
+  optional int32 id = 1;
+  /// The name of the item
+  optional string name = 2;
+  /// The flavor text of the item
+  optional string description = 3;
+}
+
+message Items {
+  repeated Item items = 1;
+}

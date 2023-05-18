@@ -1,3 +1,12 @@
+# translate toolkit
+ttk/
+
+# composer
+vendor/
+
+# python virtuelenv
+myenv/
+
 # ignore Clowd.Squirrel exe
 Update.exe
 
