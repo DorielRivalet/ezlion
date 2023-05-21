@@ -1,0 +1,32 @@
+Documentation
+=============
+:toc:
+:toc-placement: preamble
+:toclevels: 3
+:author: Doriel Rivalet
+:revision: 1
+
+// Need some preamble to get TOC:
+{empty}
+
+== About
+
+== Commands
+
+=== Requirements
+
+* Translate Toolkit
+* Python
+
+.Converting the source files into portable object templates for translation
+[source,bash]
+txt2po -i src\data\strings\input\FILENAME.txt -o src\data\strings\output\FILENAME.pot
+
+In case the process takes too long, we can check for duplicate entries.
+
+.Removing duplicate entries from the source files
+[source,bash]
+python remove_dupplicate_lines.py
+
+.Removing duplicate lines
+NOTE: This script will output the files in `input\unique`
