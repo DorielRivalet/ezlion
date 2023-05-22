@@ -5,19 +5,16 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Title>EZlion</Title>
-	<PackageVersion>1.0.1-alpha</PackageVersion>
+	<PackageVersion>5.0.0-beta</PackageVersion>
 	<Authors>Doriel Rivalet</Authors>
 	<Description>A data retrieval and translation project for Monster Hunter Frontier Z</Description>
-	<RepositoryUrl>https://github.com/DorielRivalet/ezlion</RepositoryUrl>
-	<PackageTags>monster-hunter</PackageTags>
+	<RepositoryUrl>https://github.com/DorielRivalet/ezlion.git</RepositoryUrl>
+	<PackageProjectUrl>https://github.com/DorielRivalet/ezlion</PackageProjectUrl>
+	<RepositoryType>git</RepositoryType>
+	<PackageTags>monster-hunter;Monster Hunter;Monster Hunter Frontier Z; Monster Hunter Frontier;MHF;MHF-Z</PackageTags>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 	<GenerateDocumentationFile>True</GenerateDocumentationFile>
 	<Copyright>Copyright (c) Doriel Rivalet 2023</Copyright>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-  </ItemGroup>
-
 </Project>
