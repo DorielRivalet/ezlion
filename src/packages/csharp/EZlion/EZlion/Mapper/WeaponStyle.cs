@@ -19,10 +19,10 @@ namespace EZlion.Mapper
         /// </value>
         public static IReadOnlyDictionary<int, string> IDName { get; } = new Dictionary<int, string>
         {
-            {0, "Earth Style"},
-            {1, "Heaven Style"},
-            {2, "Storm Style"},
-            {3, "Extreme Style"}
+            { 0, "Earth Style"},
+            { 1, "Heaven Style"},
+            { 2, "Storm Style"},
+            { 3, "Extreme Style"}
         };
     };
 }

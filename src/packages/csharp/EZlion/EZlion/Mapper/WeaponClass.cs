@@ -19,20 +19,20 @@ namespace EZlion.Mapper
         /// </value>
         public static IReadOnlyDictionary<int, string> IDName { get; } = new Dictionary<int, string>
         {
-            {0, "Blademaster"},
-            {1, "Gunner"},
-            {2, "Blademaster"},
-            {3, "Blademaster"},
-            {4, "Blademaster"},
-            {5, "Gunner"},
-            {6, "Blademaster"},
-            {7, "Blademaster"},
-            {8, "Blademaster"},
-            {9, "Blademaster"},
-            {10, "Gunner"},
-            {11, "Blademaster"},
-            {12, "Blademaster"},
-            {13, "Blademaster"}
+            { 0, "Blademaster"},
+            { 1, "Gunner"},
+            { 2, "Blademaster"},
+            { 3, "Blademaster"},
+            { 4, "Blademaster"},
+            { 5, "Gunner"},
+            { 6, "Blademaster"},
+            { 7, "Blademaster"},
+            { 8, "Blademaster"},
+            { 9, "Blademaster"},
+            { 10, "Gunner"},
+            { 11, "Blademaster"},
+            { 12, "Blademaster"},
+            { 13, "Blademaster"}
         };
     };
 }
