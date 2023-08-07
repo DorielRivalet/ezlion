@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Title>EZlion</Title>
-	<PackageVersion>6.0.0-beta</PackageVersion>
+	<PackageVersion>6.0.1-beta</PackageVersion>
 	<Authors>Doriel Rivalet</Authors>
 	<Description>A data retrieval and translation project for Monster Hunter Frontier Z</Description>
 	<RepositoryUrl>https://github.com/DorielRivalet/ezlion.git</RepositoryUrl>
