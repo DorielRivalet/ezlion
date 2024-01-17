@@ -1,0 +1,22 @@
+{
+  "name": "ezlion",
+  "version": "1.0.0",
+  "description": "A data retrieval and translation project for Monster Hunter Frontier Z",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DorielRivalet/ezlion.git"
+  },
+  "keywords": [
+    "mhfz"
+  ],
+  "author": "DorielRivalet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DorielRivalet/ezlion/issues"
+  },
+  "homepage": "https://github.com/DorielRivalet/ezlion#readme"
+}
