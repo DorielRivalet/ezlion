@@ -1,33 +1,32 @@
 // TODO types
-import ArmorArms from "./Mapper/ArmorArms";
-import ArmorChest from "./Mapper/ArmorChest";
-import ArmorColor from "./Mapper/ArmorColor";
-import ArmorHead from "./Mapper/ArmorHead";
-import ArmorLegs from "./Mapper/ArmorLegs";
-import ArmorWaist from "./Mapper/ArmorWaist";
-import Item from "./Mapper/Item";
-import Location from "./Mapper/Location";
-import Monster from "./Mapper/Monster";
-import MonsterPart from "./Mapper/MonsterPart";
-import ObjectiveType from "./Mapper/ObjectiveType";
-import PoogieCostume from "./Mapper/PoogieCostume";
-import Quest from "./Mapper/Quest";
-import RankBand from "./Mapper/RankBand";
-import Sharpness from "./Mapper/Sharpness";
-import SkillArmor from "./Mapper/SkillArmor";
-import SkillArmorPriority from "./Mapper/SkillArmorPriority";
-import SkillCaravan from "./Mapper/SkillCaravan";
-import SkillDiva from "./Mapper/SkillDiva";
-import SkillHalk from "./Mapper/SkillHalk";
-import SkillRoadTower from "./Mapper/SkillRoadTower";
-import SkillSigil from "./Mapper/SkillSigil";
-import SkillStyleRank from "./Mapper/SkillStyleRank";
-import SkillZenith from "./Mapper/SkillZenith";
-import WeaponBlademaster from "./Mapper/WeaponBlademaster";
-import WeaponClass from "./Mapper/WeaponClass";
-import WeaponGunner from "./Mapper/WeaponGunner";
-import WeaponStyle from "./Mapper/ArmoWeaponStylerChest";
-import WeaponType from "./Mapper/WeaponType";
+import ArmorArms from "./Mapper/ArmorArms.js";
+import ArmorChest from "./Mapper/ArmorChest.js";
+import ArmorColor from "./Mapper/ArmorColor.js";
+import ArmorHead from "./Mapper/ArmorHead.js";
+import ArmorLegs from "./Mapper/ArmorLegs.js";
+import ArmorWaist from "./Mapper/ArmorWaist.js";
+import Item from "./Mapper/Item.js";
+import Location from "./Mapper/Location.js";
+import Monster from "./Mapper/Monster.js";
+import ObjectiveType from "./Mapper/ObjectiveType.js";
+import PoogieCostume from "./Mapper/PoogieCostume.js";
+import Quest from "./Mapper/Quest.js";
+import RankBand from "./Mapper/RankBand.js";
+import Sharpness from "./Mapper/Sharpness.js";
+import SkillArmor from "./Mapper/SkillArmor.js";
+import SkillArmorPriority from "./Mapper/SkillArmorPriority.js";
+import SkillCaravan from "./Mapper/SkillCaravan.js";
+import SkillDiva from "./Mapper/SkillDiva.js";
+import SkillHalk from "./Mapper/SkillHalk.js";
+import SkillRoadTower from "./Mapper/SkillRoadTower.js";
+import SkillSigil from "./Mapper/SkillSigil.js";
+import SkillStyleRank from "./Mapper/SkillStyleRank.js";
+import SkillZenith from "./Mapper/SkillZenith.js";
+import WeaponBlademaster from "./Mapper/WeaponBlademaster.js";
+import WeaponClass from "./Mapper/WeaponClass.js";
+import WeaponGunner from "./Mapper/WeaponGunner.js";
+import WeaponStyle from "./Mapper/WeaponStyle.js";
+import WeaponType from "./Mapper/WeaponType.js";
 
 export default {
   ArmorArms,
@@ -39,7 +38,6 @@ export default {
   Item,
   Location,
   Monster,
-  MonsterPart,
   ObjectiveType,
   PoogieCostume,
   Quest,
