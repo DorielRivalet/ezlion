@@ -1,6 +1,6 @@
 {
   "name": "ezlion",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "A data retrieval and translation project for Monster Hunter Frontier Z",
   "main": "index.js",
   "type": "module",

@@ -27,6 +27,10 @@ import WeaponClass from "./Mapper/WeaponClass.js";
 import WeaponGunner from "./Mapper/WeaponGunner.js";
 import WeaponStyle from "./Mapper/WeaponStyle.js";
 import WeaponType from "./Mapper/WeaponType.js";
+import PoogieGuildOutfit from "./Mapper/PoogieGuildOutfit.js";
+import QuestToggleMode from "./Mapper/QuestToggleMode.js";
+import SkillDivaPrayerGem from "./Mapper/SkillDivaPrayerGem.js";
+import SkillGuildPoogie from "./Mapper/SkillGuildPoogie.js";
 
 export default {
   ArmorArms,
@@ -57,4 +61,8 @@ export default {
   WeaponGunner,
   WeaponStyle,
   WeaponType,
+  PoogieGuildOutfit,
+  QuestToggleMode,
+  SkillDivaPrayerGem,
+  SkillGuildPoogie,
 };
