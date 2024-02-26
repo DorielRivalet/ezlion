@@ -1,4 +1,3 @@
-// TODO types
 import ArmorArms from "./Mapper/ArmorArms.js";
 import ArmorChest from "./Mapper/ArmorChest.js";
 import ArmorColor from "./Mapper/ArmorColor.js";
