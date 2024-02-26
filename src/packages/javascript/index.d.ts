@@ -1554,6 +1554,41 @@ declare module "ezlion" {
     | "Dining Grey 3"
     | "Dining Grey 4";
 
+  export type FrontierDivaSkillName =
+    | "None"
+    | "High Speed Gathering"
+    | "Weapon Handling"
+    | "Focus+2"
+    | "Hunter Valhalla"
+    | "Status Immunity"
+    | "S. Immunity (Myriad)"
+    | "Starving Wolf+2"
+    | "Imperturbable"
+    | "Lone Wolf"
+    | "Vampirism+2"
+    | "Evade Distance Up"
+    | "Combination Expert+3"
+    | "Stylish"
+    | "Good Luck"
+    | "Great Luck"
+    | "Carving Expert"
+    | ""
+    | "Relief"
+    | "Recovery Items UP"
+    | "Hunger Negated"
+    | "Sharpening Artisan"
+    | "Recovery Speed +2"
+    | "Guard+2"
+    | "Speed Eating"
+    | "Encourage+2"
+    | "Stamina Rec Up (Lg)"
+    | "Razor Sharp +2"
+    | "Evasion+2"
+    | "True Guts"
+    | "Magnetic Res"
+    | "Crystal Res"
+    | "Honed Blade+3";
+
   // Define types for each export
   export type ArmorArms = FrontierEnumerable;
   export type ArmorChest = FrontierEnumerable;
@@ -1570,7 +1605,7 @@ declare module "ezlion" {
   export type RankBand = { [key: number]: FrontierRankBand };
   export type Sharpness = { [key: number]: FrontierSharpnessColorName };
   export type SkillArmor = { [key: number]: FrontierArmorSkillName };
-  export type SkillArmorPriority = { [key: number]: FrontierArmorSkillTree };
+  export type SkillTree = { [key: number]: FrontierArmorSkillTree };
   export type SkillCaravan = { [key: number]: FrontierCaravanSkillName };
   export type SkillDiva = { [key: number]: FrontierDivaSkillName };
   export type SkillHalk = { [key: number]: FrontierHalkSkillName };
@@ -1615,7 +1650,6 @@ declare module "ezlion" {
     RankBand: RankBand;
     Sharpness: Sharpness;
     SkillArmor: SkillArmor;
-    SkillArmorPriority: SkillArmorPriority;
     SkillCaravan: SkillCaravan;
     SkillDiva: SkillDiva;
     SkillHalk: SkillHalk;
@@ -1632,6 +1666,8 @@ declare module "ezlion" {
     QuestToggleMode: QuestToggleMode;
     SkillDivaPrayerGem: SkillDivaPrayerGem;
     SkillGuildPoogie: SkillGuildPoogie;
+    SkillTree: SkillTree;
+    SkillArmorPriority: SkillTree;
   };
 
   export default ezlion;
