@@ -30,7 +30,7 @@ import PoogieGuildOutfit from "./Mapper/PoogieGuildOutfit.js";
 import QuestToggleMode from "./Mapper/QuestToggleMode.js";
 import SkillDivaPrayerGem from "./Mapper/SkillDivaPrayerGem.js";
 import SkillGuildPoogie from "./Mapper/SkillGuildPoogie.js";
-import SkillTree from "./Mapper/SkillTree.ts";
+import SkillTree from "./Mapper/SkillTree.js";
 
 export default {
   ArmorArms,

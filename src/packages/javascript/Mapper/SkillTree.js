@@ -198,5 +198,5 @@ export default Object.freeze(
   ].reduce((acc, skill, index) => {
     acc[index] = skill;
     return acc;
-  }, {} as Record<number, string>)
+  }, {})
 );
