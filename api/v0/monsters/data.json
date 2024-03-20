@@ -1,0 +1,16 @@
+{
+  "results": [
+    {
+      "id": 0,
+      "name": "Rathalos"
+    },
+    {
+      "id": 1,
+      "value": "Rathian"
+    }
+  ],
+  "metadata": {
+    "readonly": true,
+    "repository": "https://github.com/DorielRivalet/ezlion"
+  }
+}
