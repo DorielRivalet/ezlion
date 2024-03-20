@@ -8,12 +8,7 @@ export default (req: VercelRequest, res: VercelResponse) => {
       return res.status(405).json({ error: "Method Not Allowed" });
     }
 
-    const { id } = req.query;
-    if (typeof id !== "string") {
-      return res
-        .status(400)
-        .json({ error: `Bad request. Request: ${JSON.stringify(req)}` });
-    }
+    return res.status(200).json(req);
 
     const dataPath = join(process.cwd(), "api", "v0", "monsters", "data.json");
     const data = JSON.parse(readFileSync(dataPath, "utf8"));
