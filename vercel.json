@@ -6,7 +6,7 @@
       "dest": "api/v0/monsters/index.ts"
     },
     {
-      "src": "/api/v0/monsters/(\\d+)",
+      "src": "/api/v0/monsters/:id(\\d+)",
       "dest": "api/v0/monsters/[id]/index.ts"
     }
   ],
