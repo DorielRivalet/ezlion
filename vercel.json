@@ -1,12 +1,5 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "api/v0/monsters/index.ts",
-      "use": "@vercel/node",
-      "config": { "includeFiles": ["api/**"] }
-    }
-  ],
   "routes": [
     {
       "src": "/api/v0/monsters",
