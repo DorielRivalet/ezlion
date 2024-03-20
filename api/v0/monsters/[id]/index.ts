@@ -10,7 +10,9 @@ export default (req: VercelRequest, res: VercelResponse) => {
 
     const { id } = req.query;
     if (typeof id !== "string") {
-      return res.status(400).json({ error: `Bad request. Request: ${req}` });
+      return res
+        .status(400)
+        .json({ error: `Bad request. Request: ${JSON.stringify(req)}` });
     }
 
     const dataPath = join(process.cwd(), "api", "v0", "monsters", "data.json");
