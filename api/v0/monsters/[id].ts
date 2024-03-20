@@ -2,7 +2,7 @@ import { readFileSync } from "fs";
 import { join } from "path";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 
-export function GET(req: VercelRequest, res: VercelResponse) {
+export default (req: VercelRequest, res: VercelResponse) => {
   try {
     if (req.method !== "GET") {
       return res.status(405).json({ error: "Method Not Allowed" });
@@ -27,4 +27,4 @@ export function GET(req: VercelRequest, res: VercelResponse) {
   } catch (err) {
     return res.status(500).json({ error: "Internal Server Error" });
   }
-}
+};

@@ -2,19 +2,19 @@
   "version": 2,
   "builds": [
     {
-      "src": "dist/index.js",
+      "src": "api/v0/monsters/index.ts",
       "use": "@vercel/node",
-      "config": { "includeFiles": ["dist/**"] }
+      "config": { "includeFiles": ["api/**"] }
     }
   ],
   "routes": [
     {
-      "src": "/api/v0/monsters/(.*)",
-      "dest": "dist/v0/monsters/[id].js"
+      "src": "/api/v0/monsters",
+      "dest": "api/v0/monsters/index.ts"
     },
     {
-      "src": "/api/v0/monsters",
-      "dest": "dist/v0/monsters/index.js"
+      "src": "/api/v0/monsters/(.*)",
+      "dest": "api/v0/monsters/[id].ts"
     }
   ]
 }
