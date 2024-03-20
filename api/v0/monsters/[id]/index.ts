@@ -18,6 +18,14 @@ export default (req: VercelRequest, res: VercelResponse) => {
     const idString = url.substring(lastSlashIndex + 1);
     const id = parseInt(idString, 10);
 
+    if (Number.isNaN(id)) {
+      return res
+        .status(400)
+        .json({
+          error: `Bad response. lastSlashIndex: ${lastSlashIndex} idString: ${idString} id: ${id}`,
+        });
+    }
+
     const dataPath = join(process.cwd(), "api", "v0", "monsters", "data.json");
     const data = JSON.parse(readFileSync(dataPath, "utf8"));
     const monster = data.results.find((m: { id: number }) => m.id === id);
