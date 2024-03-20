@@ -9,5 +9,11 @@
       "src": "/api/v0/monsters/(\\d+)",
       "dest": "/api/v0/monsters/[id]/index.ts"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/api/index.ts"
+    }
   ]
 }

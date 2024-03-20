@@ -14,16 +14,14 @@ export default (req: VercelRequest, res: VercelResponse) => {
       return res.status(400).json({ error: `Bad response.` });
     }
 
-    const lastSlashIndex = url.lastIndexOf("monsters/");
+    const lastSlashIndex = url.lastIndexOf("/");
     const idString = url.substring(lastSlashIndex + 1);
     const id = parseInt(idString, 10);
 
     if (Number.isNaN(id)) {
-      return res
-        .status(400)
-        .json({
-          error: `Bad response. lastSlashIndex: ${lastSlashIndex} idString: ${idString} id: ${id}`,
-        });
+      return res.status(400).json({
+        error: `Bad response.`,
+      });
     }
 
     const dataPath = join(process.cwd(), "api", "v0", "monsters", "data.json");
