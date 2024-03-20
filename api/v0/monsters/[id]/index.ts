@@ -8,13 +8,19 @@ export default (req: VercelRequest, res: VercelResponse) => {
       return res.status(405).json({ error: "Method Not Allowed" });
     }
 
-    return res.status(200).json(req.url);
+    const url = req.url; // Assuming req.url contains the full URL path
+
+    if (url === undefined) {
+      return res.status(400).json({ error: `Bad response.` });
+    }
+
+    const lastSlashIndex = url.lastIndexOf("monsters/");
+    const idString = url.substring(lastSlashIndex + 1);
+    const id = parseInt(idString, 10);
 
     const dataPath = join(process.cwd(), "api", "v0", "monsters", "data.json");
     const data = JSON.parse(readFileSync(dataPath, "utf8"));
-    const monster = data.results.find(
-      (m: { id: number }) => m.id === parseInt(id, 10)
-    );
+    const monster = data.results.find((m: { id: number }) => m.id === id);
 
     if (monster) {
       return res.status(200).json(monster);
