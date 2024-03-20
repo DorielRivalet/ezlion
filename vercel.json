@@ -14,7 +14,7 @@
     },
     {
       "src": "/api/v0/monsters/(.*)",
-      "dest": "api/v0/monsters/[id].ts"
+      "dest": "api/v0/monsters/id/index.ts"
     }
   ]
 }
