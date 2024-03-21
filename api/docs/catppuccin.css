@@ -1,4 +1,4 @@
-@import "@catppuccin/palette/style";
+@import url("https://unpkg.com/@catppuccin/palette/css/catppuccin.css");
 
 * {
   color: var(--ctp-mocha-red);
