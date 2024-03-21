@@ -25,7 +25,7 @@ export default (req: VercelRequest, res: VercelResponse) => {
 
     const dataPath = join(process.cwd(), "api", "v0", "monsters", "data.json");
     const data = JSON.parse(readFileSync(dataPath, "utf8"));
-    return res.status(200).json(data.results);
+    return res.status(200).json(data);
   } catch (err) {
     return res
       .status(500)
