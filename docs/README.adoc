@@ -29,4 +29,4 @@ NOTE: This script will output the files in `input\unique`
 
 == API
 
-See http://ezlion.vercel.app/api/docs[here]
+See https://ezlion.vercel.app/api/docs[here]
