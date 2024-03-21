@@ -1,25 +1,22 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { SwaggerUIBundle } from "swagger-ui-dist";
 import { readFileSync } from "fs";
 import { join } from "path";
+import type { VercelRequest, VercelResponse } from "@vercel/node";
 
 export default (req: VercelRequest, res: VercelResponse) => {
   try {
-    const ui = SwaggerUIBundle({
-      spec: JSON.parse(
-        readFileSync(join(process.cwd(), "api", "docs", "swagger.json"), "utf8")
-      ),
-      dom_id: "#swagger-ui",
-      presets: [
-        SwaggerUIBundle.presets.apis,
-        SwaggerUIBundle.SwaggerUIStandalonePreset,
-      ],
-      layout: "StandaloneLayout",
-    });
+    // Path to your custom Swagger UI HTML file
+    const swaggerHtmlPath = join(
+      process.cwd(),
+      "api",
+      "docs",
+      "swagger-ui.html"
+    );
+    const swaggerHtml = readFileSync(swaggerHtmlPath, "utf8");
 
     res.setHeader("Content-Type", "text/html");
-    return res.send(ui);
-  } catch {
+    return res.send(swaggerHtml);
+  } catch (error) {
+    console.error(error);
     return res
       .status(500)
       .setHeader("Content-Type", "application/problem+json")

@@ -12,6 +12,10 @@
     {
       "src": "/api/docs",
       "dest": "/api/docs/index.ts"
+    },
+    {
+      "src": "/api/docs/swagger.json",
+      "dest": "/api/docs/swagger.json"
     }
   ]
 }
