@@ -1,11 +1,11 @@
 # EZlion
 
-<center>
+<p align="center">
   <img src='./assets/logo-alt.svg'>
-  <div>
-    <i>Data retrieval, made easy.</i>
-  </div>
-</center>
+  <p align="center">
+      <i>Data retrieval, made easy.</i>
+  </p>
+</p>
 
 - NuGet ![NuGet](https://img.shields.io/nuget/dt/EZlion)
 - npm ![npm](https://img.shields.io/npm/dt/ezlion)
