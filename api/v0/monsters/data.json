@@ -2,11 +2,15 @@
   "results": [
     {
       "id": 0,
-      "name": "Rathalos"
+      "name": "None"
     },
     {
       "id": 1,
       "name": "Rathian"
+    },
+    {
+      "id": 2,
+      "name": "Rathalos"
     }
   ],
   "metadata": {

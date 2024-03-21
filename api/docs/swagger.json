@@ -1,0 +1,42 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Ezlion API",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/api/v0/monsters": {
+      "get": {
+        "summary": "Get all monsters",
+        "responses": {
+          "200": {
+            "description": "A list of monsters"
+          }
+        }
+      }
+    },
+    "/api/v0/monsters/{id}": {
+      "get": {
+        "summary": "Get a monster by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A single monster"
+          },
+          "404": {
+            "description": "Monster not found. Returns monster \"None\" in default key."
+          }
+        }
+      }
+    }
+  }
+}

@@ -3,5 +3,8 @@
     "@vercel/build-utils": "^7.9.1",
     "@vercel/node": "^3.0.24",
     "typescript": "^5.4.2"
+  },
+  "dependencies": {
+    "swagger-ui-dist": "^5.12.0"
   }
 }

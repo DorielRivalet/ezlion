@@ -9,11 +9,7 @@ Documentation
 // Need some preamble to get TOC:
 {empty}
 
-== About
-
-== Commands
-
-=== Requirements
+== Translation Files Generation
 
 * Translate Toolkit
 * Python
@@ -30,3 +26,7 @@ python remove_dupplicate_lines.py
 
 .Removing duplicate lines
 NOTE: This script will output the files in `input\unique`
+
+== API
+
+See http://ezlion.vercel.app/api/docs[here]
