@@ -11,7 +11,17 @@ export default (req: VercelRequest, res: VercelResponse) => {
       "docs",
       "swagger-ui.html"
     );
-    const swaggerHtml = readFileSync(swaggerHtmlPath, "utf8");
+    let swaggerHtml = readFileSync(swaggerHtmlPath, "utf8");
+
+    // Path to your custom CSS file
+    const customCssPath = join(process.cwd(), "api", "docs", "catppuccin.css");
+    const customCss = readFileSync(customCssPath, "utf8");
+
+    // Inject the custom CSS into the HTML
+    swaggerHtml = swaggerHtml.replace(
+      "</head>",
+      `<style>${customCss}</style></head>`
+    );
 
     res.setHeader("Content-Type", "text/html");
     return res.send(swaggerHtml);
