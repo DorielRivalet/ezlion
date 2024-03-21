@@ -6,6 +6,7 @@
     "typescript": "^5.4.2"
   },
   "dependencies": {
+    "@catppuccin/palette": "^1.1.0",
     "swagger-ui-dist": "^5.12.0"
   }
 }

@@ -1,3 +1,5 @@
+@import "@catppuccin/palette/style";
+
 * {
-  color: red;
+  color: var(--ctp-mocha-red);
 }
