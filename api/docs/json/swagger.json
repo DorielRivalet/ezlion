@@ -10,7 +10,7 @@
         "summary": "Get all monsters",
         "responses": {
           "200": {
-            "description": "A list of monsters"
+            "description": "A list of monsters in the results key. Includes metadata key."
           }
         }
       }

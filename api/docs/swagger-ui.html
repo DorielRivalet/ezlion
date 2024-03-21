@@ -22,8 +22,10 @@
     ></script>
     <script>
       window.onload = () => {
+        const swaggerJsonUrl = `https://${window.location.hostname}/api/docs/json`;
+
         window.ui = SwaggerUIBundle({
-          url: "./json/swagger.json",
+          url: swaggerJsonUrl,
           dom_id: "#swagger-ui",
           presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset],
           layout: "StandaloneLayout",
