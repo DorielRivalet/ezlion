@@ -32,7 +32,7 @@ SOFTWARE.
   }
 
   .swagger-ui .info .title small.version-stamp {
-    background-color-dark: var(--swagger-color-dark);
+    background-color: var(--swagger-color-dark);
   }
 
   .swagger-ui .info a {
@@ -40,7 +40,7 @@ SOFTWARE.
   }
 
   .swagger-ui .response-control-media-type--accept-controller select {
-    border-color-dark: var(--accept-header-color-dark);
+    border-color: var(--accept-header-color-dark);
   }
 
   .swagger-ui .response-control-media-type__accept-message {
@@ -52,7 +52,7 @@ SOFTWARE.
   }
 
   .swagger-ui .btn.authorize {
-    border-color-dark: var(--post-method-color-dark);
+    border-color: var(--post-method-color-dark);
   }
 
   .swagger-ui .btn.authorize svg {
@@ -67,12 +67,12 @@ SOFTWARE.
   }
 
   .swagger-ui .opblock.opblock-post .opblock-summary {
-    border-color-dark: var(--post-method-color-dark);
+    border-color: var(--post-method-color-dark);
   }
 
   .swagger-ui .opblock.opblock-post {
     background: var(--post-method-background-color-dark);
-    border-color-dark: var(--post-method-color-dark);
+    border-color: var(--post-method-color-dark);
   }
 
   .swagger-ui
@@ -91,12 +91,12 @@ SOFTWARE.
   }
 
   .swagger-ui .opblock.opblock-get .opblock-summary {
-    border-color-dark: var(--get-method-color-dark);
+    border-color: var(--get-method-color-dark);
   }
 
   .swagger-ui .opblock.opblock-get {
     background: var(--get-method-background-color-dark);
-    border-color-dark: var(--get-method-color-dark);
+    border-color: var(--get-method-color-dark);
   }
 
   .swagger-ui .opblock.opblock-get .tab-header .tab-item.active h4 span::after {
@@ -110,12 +110,12 @@ SOFTWARE.
   }
 
   .swagger-ui .opblock.opblock-head .opblock-summary {
-    border-color-dark: var(--head-method-color-dark);
+    border-color: var(--head-method-color-dark);
   }
 
   .swagger-ui .opblock.opblock-head {
     background: var(--head-method-background-color-dark);
-    border-color-dark: var(--head-method-color-dark);
+    border-color: var(--head-method-color-dark);
   }
 
   .swagger-ui
@@ -134,12 +134,12 @@ SOFTWARE.
   }
 
   .swagger-ui .opblock.opblock-put .opblock-summary {
-    border-color-dark: var(--put-method-color-dark);
+    border-color: var(--put-method-color-dark);
   }
 
   .swagger-ui .opblock.opblock-put {
     background: var(--put-method-background-color-dark);
-    border-color-dark: var(--put-method-color-dark);
+    border-color: var(--put-method-color-dark);
   }
 
   .swagger-ui .opblock.opblock-put .tab-header .tab-item.active h4 span::after {
@@ -153,12 +153,12 @@ SOFTWARE.
   }
 
   .swagger-ui .opblock.opblock-delete .opblock-summary {
-    border-color-dark: var(--delete-method-color-dark);
+    border-color: var(--delete-method-color-dark);
   }
 
   .swagger-ui .opblock.opblock-delete {
     background: var(--delete-method-background-color-dark);
-    border-color-dark: var(--delete-method-color-dark);
+    border-color: var(--delete-method-color-dark);
   }
 
   .swagger-ui
@@ -177,12 +177,12 @@ SOFTWARE.
   }
 
   .swagger-ui .opblock.opblock-options .opblock-summary {
-    border-color-dark: var(--options-method-color-dark);
+    border-color: var(--options-method-color-dark);
   }
 
   .swagger-ui .opblock.opblock-options {
     background: var(--options-method-background-color-dark);
-    border-color-dark: var(--options-method-color-dark);
+    border-color: var(--options-method-color-dark);
   }
 
   .swagger-ui
@@ -201,12 +201,12 @@ SOFTWARE.
   }
 
   .swagger-ui .opblock.opblock-patchs .opblock-summary {
-    border-color-dark: var(--patch-method-color-dark);
+    border-color: var(--patch-method-color-dark);
   }
 
   .swagger-ui .opblock.opblock-patch {
     background: var(--patch-method-background-color-dark);
-    border-color-dark: var(--patch-method-color-dark);
+    border-color: var(--patch-method-color-dark);
   }
 
   .swagger-ui
@@ -220,12 +220,12 @@ SOFTWARE.
 
   /* blocks */
   body {
-    background-color-dark: var(--all-bg-color-dark);
+    background-color: var(--all-bg-color-dark);
     color: white;
   }
 
   .swagger-ui .topbar {
-    background-color-dark: var(--header-bg-color-dark);
+    background-color: var(--header-bg-color-dark);
   }
 
   .swagger-ui .scheme-container {
@@ -245,7 +245,7 @@ SOFTWARE.
 
   .swagger-ui section.models {
     border: 1px solid var(--block-border-color-dark);
-    background-color-dark: var(--block-bg-color-dark);
+    background-color: var(--block-bg-color-dark);
   }
 
   .swagger-ui .opblock .opblock-section-header {
@@ -253,12 +253,12 @@ SOFTWARE.
   }
 
   .swagger-ui .body-param__example {
-    background-color-dark: var(--secondary-bg-color-dark) !important;
+    background-color: var(--secondary-bg-color-dark) !important;
     border-radius: var(--block-border-radius-dark) !important;
   }
 
   .swagger-ui .example {
-    background-color-dark: var(--secondary-bg-color-dark) !important;
+    background-color: var(--secondary-bg-color-dark) !important;
     border-radius: var(--block-border-radius-dark) !important;
   }
 
@@ -454,7 +454,7 @@ SOFTWARE.
   }
 
   .swagger-ui .info .title small.version-stamp {
-    background-color-light: var(--swagger-color-light);
+    background-color: var(--swagger-color-light);
   }
 
   .swagger-ui .info a {
@@ -462,7 +462,7 @@ SOFTWARE.
   }
 
   .swagger-ui .response-control-media-type--accept-controller select {
-    border-color-light: var(--accept-header-color-light);
+    border-color: var(--accept-header-color-light);
   }
 
   .swagger-ui .response-control-media-type__accept-message {
@@ -474,7 +474,7 @@ SOFTWARE.
   }
 
   .swagger-ui .btn.authorize {
-    border-color-light: var(--post-method-color-light);
+    border-color: var(--post-method-color-light);
   }
 
   .swagger-ui .btn.authorize svg {
@@ -489,12 +489,12 @@ SOFTWARE.
   }
 
   .swagger-ui .opblock.opblock-post .opblock-summary {
-    border-color-light: var(--post-method-color-light);
+    border-color: var(--post-method-color-light);
   }
 
   .swagger-ui .opblock.opblock-post {
     background: var(--post-method-background-color-light);
-    border-color-light: var(--post-method-color-light);
+    border-color: var(--post-method-color-light);
   }
 
   .swagger-ui
@@ -513,12 +513,12 @@ SOFTWARE.
   }
 
   .swagger-ui .opblock.opblock-get .opblock-summary {
-    border-color-light: var(--get-method-color-light);
+    border-color: var(--get-method-color-light);
   }
 
   .swagger-ui .opblock.opblock-get {
     background: var(--get-method-background-color-light);
-    border-color-light: var(--get-method-color-light);
+    border-color: var(--get-method-color-light);
   }
 
   .swagger-ui .opblock.opblock-get .tab-header .tab-item.active h4 span::after {
@@ -532,12 +532,12 @@ SOFTWARE.
   }
 
   .swagger-ui .opblock.opblock-head .opblock-summary {
-    border-color-light: var(--head-method-color-light);
+    border-color: var(--head-method-color-light);
   }
 
   .swagger-ui .opblock.opblock-head {
     background: var(--head-method-background-color-light);
-    border-color-light: var(--head-method-color-light);
+    border-color: var(--head-method-color-light);
   }
 
   .swagger-ui
@@ -556,12 +556,12 @@ SOFTWARE.
   }
 
   .swagger-ui .opblock.opblock-put .opblock-summary {
-    border-color-light: var(--put-method-color-light);
+    border-color: var(--put-method-color-light);
   }
 
   .swagger-ui .opblock.opblock-put {
     background: var(--put-method-background-color-light);
-    border-color-light: var(--put-method-color-light);
+    border-color: var(--put-method-color-light);
   }
 
   .swagger-ui .opblock.opblock-put .tab-header .tab-item.active h4 span::after {
@@ -575,12 +575,12 @@ SOFTWARE.
   }
 
   .swagger-ui .opblock.opblock-delete .opblock-summary {
-    border-color-light: var(--delete-method-color-light);
+    border-color: var(--delete-method-color-light);
   }
 
   .swagger-ui .opblock.opblock-delete {
     background: var(--delete-method-background-color-light);
-    border-color-light: var(--delete-method-color-light);
+    border-color: var(--delete-method-color-light);
   }
 
   .swagger-ui
@@ -599,12 +599,12 @@ SOFTWARE.
   }
 
   .swagger-ui .opblock.opblock-options .opblock-summary {
-    border-color-light: var(--options-method-color-light);
+    border-color: var(--options-method-color-light);
   }
 
   .swagger-ui .opblock.opblock-options {
     background: var(--options-method-background-color-light);
-    border-color-light: var(--options-method-color-light);
+    border-color: var(--options-method-color-light);
   }
 
   .swagger-ui
@@ -623,12 +623,12 @@ SOFTWARE.
   }
 
   .swagger-ui .opblock.opblock-patchs .opblock-summary {
-    border-color-light: var(--patch-method-color-light);
+    border-color: var(--patch-method-color-light);
   }
 
   .swagger-ui .opblock.opblock-patch {
     background: var(--patch-method-background-color-light);
-    border-color-light: var(--patch-method-color-light);
+    border-color: var(--patch-method-color-light);
   }
 
   .swagger-ui
@@ -642,12 +642,12 @@ SOFTWARE.
 
   /* blocks */
   body {
-    background-color-light: var(--all-bg-color-light);
+    background-color: var(--all-bg-color-light);
     color: white;
   }
 
   .swagger-ui .topbar {
-    background-color-light: var(--header-bg-color-light);
+    background-color: var(--header-bg-color-light);
   }
 
   .swagger-ui .scheme-container {
@@ -667,7 +667,7 @@ SOFTWARE.
 
   .swagger-ui section.models {
     border: 1px solid var(--block-border-color-light);
-    background-color-light: var(--block-bg-color-light);
+    background-color: var(--block-bg-color-light);
   }
 
   .swagger-ui .opblock .opblock-section-header {
@@ -675,12 +675,12 @@ SOFTWARE.
   }
 
   .swagger-ui .body-param__example {
-    background-color-light: var(--secondary-bg-color-light) !important;
+    background-color: var(--secondary-bg-color-light) !important;
     border-radius: var(--block-border-radius-light) !important;
   }
 
   .swagger-ui .example {
-    background-color-light: var(--secondary-bg-color-light) !important;
+    background-color: var(--secondary-bg-color-light) !important;
     border-radius: var(--block-border-radius-light) !important;
   }
 
@@ -880,7 +880,7 @@ SOFTWARE.
   --get-method-color-dark: var(--ctp-mocha-teal);
   --get-method-background-color-dark: rgba(0, 0, 0, 0);
   --head-method-color-dark: var(--ctp-mocha-pink);
-  --head-method-background-colo-darkr: rgba(0, 0, 0, 0);
+  --head-method-background-color-dark: rgba(0, 0, 0, 0);
   --put-method-color-dark: var(--ctp-mocha-peach);
   --put-method-background-color-dark: rgba(0, 0, 0, 0);
   --delete-method-color-dark: var(--ctp-mocha-mauve);
@@ -924,7 +924,7 @@ SOFTWARE.
   --get-method-color-light: var(--ctp-latte-teal);
   --get-method-background-color-light: rgba(0, 0, 0, 0);
   --head-method-color-light: var(--ctp-latte-pink);
-  --head-method-background-colo-lightr: rgba(0, 0, 0, 0);
+  --head-method-background-color-light: rgba(0, 0, 0, 0);
   --put-method-color-light: var(--ctp-latte-peach);
   --put-method-background-color-light: rgba(0, 0, 0, 0);
   --delete-method-color-light: var(--ctp-latte-mauve);
