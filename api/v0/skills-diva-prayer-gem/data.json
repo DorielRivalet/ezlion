@@ -1,0 +1,34 @@
+{
+  "results": [
+    { "id": 0, "name": "None" },
+    { "id": 1, "name": "Sharpness UP" },
+    { "id": 2, "name": "Gentle Mounting" },
+    { "id": 3, "name": "Tail Cutter" },
+    { "id": 4, "name": "Regeneration UP" },
+    { "id": 5, "name": "Earth UP" },
+    { "id": 6, "name": "Heaven UP" },
+    { "id": 7, "name": "Storm UP" },
+    { "id": 8, "name": "Cutting UP" },
+    { "id": 9, "name": "Impact UP" },
+    { "id": 10, "name": "Shot UP" },
+    { "id": 11, "name": "Status Duration UP" },
+    { "id": 12, "name": "Status Weakness UP" },
+    { "id": 13, "name": "Exploit Weakness UP" },
+    { "id": 14, "name": "Element UP" },
+    { "id": 15, "name": "Area Lock" },
+    { "id": 16, "name": "Shop UP" },
+    { "id": 17, "name": "Friendship UP" },
+    { "id": 18, "name": "Blessing UP" },
+    { "id": 19, "name": "Affinity UP" },
+    { "id": 20, "name": "Fire Res UP" },
+    { "id": 21, "name": "Water Res UP" },
+    { "id": 22, "name": "Ice Res UP" },
+    { "id": 23, "name": "Dragon Res UP" },
+    { "id": 24, "name": "Thunder Res UP" },
+    { "id": 25, "name": "All Res UP" }
+  ],
+  "metadata": {
+    "readonly": true,
+    "repository": "https://github.com/DorielRivalet/ezlion"
+  }
+}

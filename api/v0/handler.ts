@@ -1,17 +1,51 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { readFileSync } from "fs";
 import { join } from "path";
-type ListName = "default" | "monsters" | "armor-skills";
-type DefaultValue = { name: ListName; value: Object };
+
+type ListName =
+  | "default"
+  | "armor-arms"
+  | "armor-colors"
+  | "armor-chests"
+  | "armor-heads"
+  | "armor-legs"
+  | "armor-waists"
+  | "items"
+  | "locations"
+  | "monsters"
+  | "objective-types"
+  | "poogie-costumes"
+  | "poogie-guild-outfits"
+  | "quest-toggle-modes"
+  | "quests"
+  | "rank-bands"
+  | "sharpness"
+  | "skills-armor"
+  | "skills-armor-priority"
+  | "skills-caravan"
+  | "skills-diva"
+  | "skills-diva-prayer-gem"
+  | "skills-guild-poogie"
+  | "skills-halk"
+  | "skills-road-tower"
+  | "skills-sigil"
+  | "skills-style-rank"
+  | "skills-tree"
+  | "skills-zenith"
+  | "weapon-classes"
+  | "weapon-styles"
+  | "weapon-types"
+  | "weapons-blademaster"
+  | "weapons-gunner";
+type DefaultValue = { name: ListName; value: { id: number; name: string } };
 
 const version = "v0";
-
 const defaultValues: DefaultValue[] = [
   {
     name: "default",
     value: {
       id: 0,
-      name: "Not Found",
+      name: "None",
     },
   },
   {
@@ -19,6 +53,139 @@ const defaultValues: DefaultValue[] = [
     value: {
       id: 0,
       name: "None",
+    },
+  },
+  {
+    name: "locations",
+    value: {
+      id: 0,
+      name: "Loading",
+    },
+  },
+  {
+    name: "poogie-costumes",
+    value: {
+      id: 0,
+      name: "First Costume",
+    },
+  },
+  {
+    name: "poogie-guild-outfits",
+    value: {
+      id: 0,
+      name: "Red & White",
+    },
+  },
+  {
+    name: "sharpness",
+    value: {
+      id: 0,
+      name: "Red",
+    },
+  },
+  {
+    name: "skills-armor-priority",
+    value: {
+      id: 0,
+      name: "SnS Tech",
+    },
+  },
+  {
+    name: "skills-style-rank",
+    value: {
+      id: 0,
+      name: "Nothing",
+    },
+  },
+  {
+    name: "weapon-classes",
+    value: {
+      id: 0,
+      name: "Blademaster",
+    },
+  },
+  {
+    name: "weapon-styles",
+    value: {
+      id: 0,
+      name: "Earth Style",
+    },
+  },
+  {
+    name: "weapon-types",
+    value: {
+      id: 0,
+      name: "Great Sword",
+    },
+  },
+  {
+    name: "armor-heads",
+    value: {
+      id: 0,
+      name: "No Equipment",
+    },
+  },
+  {
+    name: "armor-arms",
+    value: {
+      id: 0,
+      name: "No Equipment",
+    },
+  },
+  {
+    name: "armor-waists",
+    value: {
+      id: 0,
+      name: "No Equipment",
+    },
+  },
+  {
+    name: "armor-legs",
+    value: {
+      id: 0,
+      name: "No Equipment",
+    },
+  },
+  {
+    name: "armor-chests",
+    value: {
+      id: 0,
+      name: "No Equipment",
+    },
+  },
+  {
+    name: "armor-colors",
+    value: {
+      id: 0,
+      name: "Material Green 0",
+    },
+  },
+  {
+    name: "objective-types",
+    value: {
+      id: 0,
+      name: "Nothing",
+    },
+  },
+  {
+    name: "quest-toggle-modes",
+    value: {
+      id: 0,
+      name: "Normal",
+    },
+  },
+  {
+    name: "rank-bands",
+    value: {
+      id: 0,
+      name: "Lower",
+    },
+  },
+  {
+    name: "skills-tree",
+    value: {
+      id: 0,
+      name: "",
     },
   },
 ];
@@ -123,6 +290,7 @@ export function respondWithDefaultValue(
   }
 }
 
+/** unused? */
 export function respond(
   req: VercelRequest,
   res: VercelResponse,

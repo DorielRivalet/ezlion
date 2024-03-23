@@ -1,0 +1,43 @@
+{
+  "results": [
+    { "id": 0, "name": "None" },
+    { "id": 1, "name": "High Speed Gathering" },
+    { "id": 2, "name": "Weapon Handling" },
+    { "id": 3, "name": "Focus+2" },
+    { "id": 4, "name": "Hunter Valhalla" },
+    { "id": 5, "name": "Status Immunity" },
+    { "id": 6, "name": "S. Immunity (Myriad)" },
+    { "id": 7, "name": "Starving Wolf+2" },
+    { "id": 8, "name": "Imperturbable" },
+    { "id": 9, "name": "Lone Wolf" },
+    { "id": 10, "name": "Vampirism+2" },
+    { "id": 11, "name": "Evade Distance Up" },
+    { "id": 12, "name": "Combination Expert+3" },
+    { "id": 13, "name": "Stylish" },
+    { "id": 14, "name": "Good Luck" },
+    { "id": 15, "name": "Great Luck" },
+    { "id": 16, "name": "Carving Expert" },
+    { "id": 17, "name": "" },
+    { "id": 18, "name": "" },
+    { "id": 19, "name": "" },
+    { "id": 20, "name": "Relief" },
+    { "id": 21, "name": "Recovery Items UP" },
+    { "id": 22, "name": "Hunger Negated" },
+    { "id": 23, "name": "Sharpening Artisan" },
+    { "id": 24, "name": "Recovery Speed +2" },
+    { "id": 25, "name": "Guard+2" },
+    { "id": 26, "name": "Speed Eating" },
+    { "id": 27, "name": "Encourage+2" },
+    { "id": 28, "name": "Stamina Rec Up (Lg)" },
+    { "id": 29, "name": "Razor Sharp +2" },
+    { "id": 30, "name": "Evasion+2" },
+    { "id": 31, "name": "True Guts" },
+    { "id": 32, "name": "Magnetic Res" },
+    { "id": 33, "name": "Crystal Res" },
+    { "id": 34, "name": "Honed Blade+3" }
+  ],
+  "metadata": {
+    "readonly": true,
+    "repository": "https://github.com/DorielRivalet/ezlion"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "results": [
+    { "id": 0, "name": "Great Sword" },
+    { "id": 1, "name": "Heavy Bowgun" },
+    { "id": 2, "name": "Hammer" },
+    { "id": 3, "name": "Lance" },
+    { "id": 4, "name": "Sword and Shield" },
+    { "id": 5, "name": "Light Bowgun" },
+    { "id": 6, "name": "Dual Swords" },
+    { "id": 7, "name": "Long Sword" },
+    { "id": 8, "name": "Hunting Horn" },
+    { "id": 9, "name": "Gunlance" },
+    { "id": 10, "name": "Bow" },
+    { "id": 11, "name": "Tonfa" },
+    { "id": 12, "name": "Switch Axe F" },
+    { "id": 13, "name": "Magnet Spike" }
+  ],
+  "metadata": {
+    "readonly": true,
+    "repository": "https://github.com/DorielRivalet/ezlion"
+  }
+}
