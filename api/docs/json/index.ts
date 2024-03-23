@@ -20,7 +20,7 @@ export default (req: VercelRequest, res: VercelResponse) => {
     const dataPath = join(process.cwd(), "api", "docs", "json", "swagger.json");
     const data = JSON.parse(readFileSync(dataPath, "utf8"));
     return res.status(200).json(data);
-  } catch (err) {
+  } catch {
     return res
       .status(500)
       .setHeader("Content-Type", "application/problem+json")

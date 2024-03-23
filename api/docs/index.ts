@@ -25,8 +25,7 @@ export default (req: VercelRequest, res: VercelResponse) => {
 
     res.setHeader("Content-Type", "text/html");
     return res.send(swaggerHtml);
-  } catch (error) {
-    console.error(error);
+  } catch {
     return res
       .status(500)
       .setHeader("Content-Type", "application/problem+json")
