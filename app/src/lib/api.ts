@@ -226,17 +226,20 @@ function handleList(url: URL, data: JSONData) {
 	}
 
 	// Return the results
-	return json({
-		results: results,
-		metadata: {
-			readonly: data.metadata.readonly,
-			repository: data.metadata.repository,
-			totalItems: data.results.length,
-			totalPages: Math.ceil(data.results.length / limit),
-			currentPage: page,
-			itemsPerPage: limit
-		}
-	});
+	return json(
+		{
+			results: results,
+			metadata: {
+				readonly: data.metadata.readonly,
+				repository: data.metadata.repository,
+				totalItems: data.results.length,
+				totalPages: Math.ceil(data.results.length / limit),
+				currentPage: page,
+				itemsPerPage: limit
+			}
+		},
+		{ headers: { 'Cache-Control': 'max-age=0, s-maxage=86400' } }
+	);
 }
 
 function handleId(id: string, data: JSONData) {
@@ -252,7 +255,7 @@ function handleId(id: string, data: JSONData) {
 	const foundID = data.results.find((m: { id: number }) => m.id === selectedID);
 
 	if (foundID) {
-		return json(foundID);
+		return json(foundID, { headers: { 'Cache-Control': 'max-age=0, s-maxage=86400' } });
 	} else {
 		return error(
 			404,

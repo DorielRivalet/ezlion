@@ -6,6 +6,12 @@
 }
 
 @media (prefers-color-scheme: dark) {
+	.swagger-ui .responses-inner h4,
+	.swagger-ui .responses-inner h5,
+	.swagger-ui .operation-servers h4.message {
+		color: var(--ctp-mocha-subtext0);
+	}
+
 	* {
 		color: var(--ctp-mocha-text);
 		background-color: var(--ctp-mocha-base);
@@ -30,6 +36,12 @@
 }
 
 @media (prefers-color-scheme: light) {
+	.swagger-ui .responses-inner h4,
+	.swagger-ui .responses-inner h5,
+	.swagger-ui .operation-servers h4.message {
+		color: var(--ctp-latte-subtext0);
+	}
+
 	* {
 		color: var(--ctp-latte-text);
 		background-color: var(--ctp-latte-base);
