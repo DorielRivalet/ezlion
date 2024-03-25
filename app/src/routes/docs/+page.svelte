@@ -1,6 +1,7 @@
-<script langs="ts">
+<script lang="ts">
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
+	import './catppuccin.css';
 
 	onMount(() => {
 		const script = document.createElement('script');
@@ -9,14 +10,7 @@
 		script.dataset.url = `https://${$page.url.hostname}/openapi.json`;
 		document.body.appendChild(script);
 
-		// Custom configuration
-		const configuration = {
-			theme: 'purple'
-			// Add more configuration options here
-		};
-
 		const apiReference = document.getElementById('api-reference');
-		apiReference.dataset.configuration = JSON.stringify(configuration);
 	});
 </script>
 
