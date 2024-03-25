@@ -31,30 +31,30 @@
 
 .light-mode {
 	--theme-color-1: var(--ctp-latte-text);
-	--theme-color-2: #4c4f6999;
-	--theme-color-3: #4c4f6966;
+	--theme-color-2: var(--ctp-latte-text);
+	--theme-color-3: var(--ctp-latte-subtext0);
 	--theme-color-accent: var(--ctp-latte-blue);
 	--theme-background-1: var(--ctp-latte-base);
 	--theme-background-2: var(--ctp-latte-surface0);
-	--theme-background-3: var(--ctp-latte-lavender);
+	--theme-background-3: var(--ctp-latte-surface1);
 	--theme-background-accent: var(--ctp-latte-green);
 	--theme-border-color: var(--ctp-latte-overlay0);
 }
 .dark-mode {
 	--theme-color-1: var(--ctp-mocha-text);
-	--theme-color-2: #cdd6f499;
-	--theme-color-3: #cdd6f466;
+	--theme-color-2: var(--ctp-mocha-text);
+	--theme-color-3: var(--ctp-mocha-subtext0);
 	--theme-color-accent: var(--ctp-mocha-blue);
 	--theme-background-1: var(--ctp-mocha-base);
 	--theme-background-2: var(--ctp-mocha-surface0);
-	--theme-background-3: var(--ctp-mocha-lavender);
+	--theme-background-3: var(--ctp-mocha-surface1);
 	--theme-background-accent: var(--ctp-mocha-green);
 	--theme-border-color: var(--ctp-mocha-overlay0);
 }
 
 .light-mode .sidebar {
 	--sidebar-background-1: var(--theme-background-1);
-	--sidebar-item-hover-color: var(--ctp-latte-surface1);
+	--sidebar-item-hover-color: var(--ctp-latte-text);
 	--sidebar-item-hover-background: var(--theme-background-2);
 	--sidebar-item-active-background: var(--theme-background-2);
 	--sidebar-border-color: var(--theme-border-color);
@@ -67,7 +67,7 @@
 }
 .dark-mode .sidebar {
 	--sidebar-background-1: var(--theme-background-1);
-	--sidebar-item-hover-color: var(--ctp-mocha-surface1);
+	--sidebar-item-hover-color: var(--ctp-mocha-text);
 	--sidebar-item-hover-background: var(--theme-background-2);
 	--sidebar-item-active-background: var(--theme-background-2);
 	--sidebar-border-color: var(--theme-border-color);

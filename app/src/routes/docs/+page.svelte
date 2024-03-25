@@ -14,4 +14,5 @@
 	});
 </script>
 
+<header>test</header>
 <div id="api-reference-container"></div>
