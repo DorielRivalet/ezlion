@@ -35,7 +35,7 @@
 			"pageParameter": {
 				"name": "page",
 				"in": "query",
-				"description": "The page number of the results to return.",
+				"description": "The page number of the results to return. Does nothing if not setting the limit.",
 				"required": false,
 				"schema": {
 					"type": "integer",
@@ -45,7 +45,7 @@
 			"limitParameter": {
 				"name": "limit",
 				"in": "query",
-				"description": "The number of results to return per page.",
+				"description": "The number of results to return per page. Returns all values if unset.",
 				"required": false,
 				"schema": {
 					"type": "integer",

@@ -197,7 +197,6 @@ type JSONData = {
 };
 
 function handleList(url: URL, data: JSONData) {
-	// implement queries here
 	const params = url.searchParams;
 	const sort = params.get('sort') || 'id'; // Default to 'id' if not specified
 	const order = params.get('order') || 'ascending'; // Default to 'ascending' if not specified
@@ -205,10 +204,8 @@ function handleList(url: URL, data: JSONData) {
 	const limit = parseInt(params.get('limit') || '10', 10); // Default to 10 items per page if not specified
 
 	let results = [...data.results];
-	const hasParams = params.size > 0;
 
-	// Apply sorting if sort parameter is provided
-	if (sort && hasParams) {
+	if (sort) {
 		results.sort((a, b) => {
 			if (sort === 'name') {
 				return order === 'ascending' || order === 'asc'
@@ -220,13 +217,11 @@ function handleList(url: URL, data: JSONData) {
 		});
 	}
 
-	// Apply pagination if page and limit parameters are provided
-	if (page && limit && hasParams) {
+	if (page && params.get('limit')) {
 		const startIndex = (page - 1) * limit;
 		results = results.slice(startIndex, startIndex + limit);
 	}
 
-	// Return the results
 	return json(
 		{
 			results: results,
