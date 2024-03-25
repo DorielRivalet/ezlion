@@ -1,0 +1,89 @@
+<!--
+  ~ © 2023 Doriel Rivalet
+  ~ Use of this source code is governed by a MIT license that can be
+  ~ found in the LICENSE file.
+-->
+
+<!--
+@component
+Shows a section heading (excluding level 1) with the following optional values:
+
+- Show clickable URI fragment icon. Default: true.
+- Show horizontal line separator. Default: true.
+
+### Example usage
+
+```svelte
+<script>
+    import SectionHeading from "$lib/components/SectionHeading.svelte";
+</script>
+
+<SectionHeading title="Gear" level={3} withIcon={false} withSeparator={false}/>
+```
+
+See also: https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#fragment
+-->
+<script lang="ts">
+	// https://stackoverflow.com/questions/61303237/how-to-set-dynamic-html-tag-according-to-props-in-svelte
+	import slugify from 'slugify';
+	import LinkIcon from 'carbon-icons-svelte/lib/Link.svelte';
+	/** The name of the section heading*/
+	export let title: string;
+	/** The level of the section heading*/
+	export let level: 2 | 3 | 4 | 5 | 6;
+	export let withIcon: boolean = true;
+	export let withSeparator: boolean = true;
+	const tag = 'h' + level;
+	//https://stackoverflow.com/questions/4502633/how-to-affect-other-elements-when-one-element-is-hovered
+</script>
+
+<svelte:element this={tag} id={slugify(title, { lower: true })}>
+	<a href={'#' + slugify(title, { lower: true })}>
+		{title}
+		{#if withIcon}
+			<span class="icon">
+				<LinkIcon />
+			</span>
+		{/if}
+	</a>
+</svelte:element>
+{#if withSeparator}
+	<hr />
+{/if}
+
+<style lang="css">
+	a {
+		text-decoration: none;
+	}
+
+	.icon {
+		text-decoration: none; /* Remove underline by default */
+		opacity: 0;
+	}
+
+	a:hover {
+		text-decoration: underline var(--ctp-text);
+		opacity: 1;
+	}
+
+	a:hover > .icon {
+		opacity: 1;
+	}
+
+	.icon:hover {
+		opacity: 1;
+		cursor: pointer;
+	}
+
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-top: var(--cds-spacing-07);
+	}
+
+	a {
+		color: var(--ctp-text); /* Make the link color inherit from the parent element */
+	}
+</style>

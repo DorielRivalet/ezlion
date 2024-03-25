@@ -1,17 +1,7 @@
 @import url('https://unpkg.com/@catppuccin/palette/css/catppuccin.css');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@1,700&display=swap');
-
-* {
-	font-family: 'Noto Sans', sans-serif;
-}
+@import 'carbon-components-svelte/css/all.css';
 
 @media (prefers-color-scheme: dark) {
-	.swagger-ui .responses-inner h4,
-	.swagger-ui .responses-inner h5,
-	.swagger-ui .operation-servers h4.message {
-		color: var(--ctp-mocha-subtext0);
-	}
-
 	* {
 		color: var(--ctp-mocha-text);
 		background-color: var(--ctp-mocha-base);
@@ -36,12 +26,6 @@
 }
 
 @media (prefers-color-scheme: light) {
-	.swagger-ui .responses-inner h4,
-	.swagger-ui .responses-inner h5,
-	.swagger-ui .operation-servers h4.message {
-		color: var(--ctp-latte-subtext0);
-	}
-
 	* {
 		color: var(--ctp-latte-text);
 		background-color: var(--ctp-latte-base);
@@ -63,4 +47,208 @@
 		color: var(--ctp-latte-text);
 		background-color: var(--ctp-latte-surface0);
 	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--ctp-rosewater: var(--ctp-mocha-rosewater);
+		--ctp-flamingo: var(--ctp-mocha-flamingo);
+		--ctp-pink: var(--ctp-mocha-pink);
+		--ctp-mauve: var(--ctp-mocha-mauve);
+		--ctp-red: var(--ctp-mocha-red);
+		--ctp-maroon: var(--ctp-mocha-maroon);
+		--ctp-peach: var(--ctp-mocha-peach);
+		--ctp-yellow: var(--ctp-mocha-yellow);
+		--ctp-green: var(--ctp-mocha-green);
+		--ctp-teal: var(--ctp-mocha-teal);
+		--ctp-sky: var(--ctp-mocha-sky);
+		--ctp-sapphire: var(--ctp-mocha-sapphire);
+		--ctp-blue: var(--ctp-mocha-blue);
+		--ctp-lavender: var(--ctp-mocha-lavender);
+		--ctp-text: var(--ctp-mocha-text);
+		--ctp-subtext1: var(--ctp-mocha-subtext1);
+		--ctp-subtext0: var(--ctp-mocha-subtext0: );
+		--ctp-overlay2: var(--ctp-mocha-overlay2);
+		--ctp-overlay1: var(--ctp-mocha-overlay1);
+		--ctp-overlay0: var(--ctp-mocha-overlay0);
+		--ctp-surface2: var(--ctp-mocha-surface2);
+		--ctp-surface1: var(--ctp-mocha-surface1);
+		--ctp-surface0: var(--ctp-mocha-surface0);
+		--ctp-base: var(--ctp-mocha-base);
+		--ctp-mantle: var(--ctp-mocha-mantle);
+		--ctp-crust: var(--ctp-mocha-crust);
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--ctp-rosewater: var(--ctp-latte-rosewater);
+		--ctp-flamingo: var(--ctp-latte-flamingo);
+		--ctp-pink: var(--ctp-latte-pink);
+		--ctp-mauve: var(--ctp-latte-mauve);
+		--ctp-red: var(--ctp-latte-red);
+		--ctp-maroon: var(--ctp-latte-maroon);
+		--ctp-peach: var(--ctp-latte-peach);
+		--ctp-yellow: var(--ctp-latte-yellow);
+		--ctp-green: var(--ctp-latte-green);
+		--ctp-teal: var(--ctp-latte-teal);
+		--ctp-sky: var(--ctp-latte-sky);
+		--ctp-sapphire: var(--ctp-latte-sapphire);
+		--ctp-blue: var(--ctp-latte-blue);
+		--ctp-lavender: var(--ctp-latte-lavender);
+		--ctp-text: var(--ctp-latte-text);
+		--ctp-subtext1: var(--ctp-latte-subtext1);
+		--ctp-subtext0: var(--ctp-latte-subtext0: );
+		--ctp-overlay2: var(--ctp-latte-overlay2);
+		--ctp-overlay1: var(--ctp-latte-overlay1);
+		--ctp-overlay0: var(--ctp-latte-overlay0);
+		--ctp-surface2: var(--ctp-latte-surface2);
+		--ctp-surface1: var(--ctp-latte-surface1);
+		--ctp-surface0: var(--ctp-latte-surface0);
+		--ctp-base: var(--ctp-latte-base);
+		--ctp-mantle: var(--ctp-latte-mantle);
+		--ctp-crust: var(--ctp-latte-crust);
+	}
+}
+
+:root {
+	--font-body: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+	--font-mono: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier,
+		monospace;
+	--font-serif: 'IBM Plex Serif', 'Georgia', Times, serif;
+	font-family: var(--font-body);
+	--cursor-icon-none: auto;
+	--cursor-icon-none-pointer: pointer;
+	--cursor-icon-none-wait: wait;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	background-attachment: fixed;
+	background-size: 100vw 100vh;
+}
+
+@media (prefers-reduced-motion) {
+	*,
+	::before,
+	::after {
+		animation-duration: 0.001s !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001s !important;
+		transition: none !important; /* TODO?	*/
+	}
+}
+
+/* https://www.digitalocean.com/community/tutorials/css-scrollbars
+Works on Firefox */
+* {
+	scrollbar-width: thin;
+	scrollbar-color: var(--ctp-blue) var(--ctp-crust);
+	caret-color: var(--ctp-rosewater);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+	width: var(--cds-spacing-03);
+}
+
+*::-webkit-scrollbar-track {
+	background: var(--ctp-crust);
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: var(--ctp-blue);
+	border-radius: 1rem;
+	border: 2px solid var(--ctp-blue);
+}
+
+.text-column {
+	display: flex;
+	max-width: 48rem;
+	flex: 0.6;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 auto;
+}
+
+.subtle {
+	color: var(--ctp-overlay1);
+}
+
+@media (min-width: 720px) {
+	h1 {
+		font-size: 2.4rem;
+	}
+}
+
+@media (prefers-reduced-motion) {
+	::view-transition-group(*),
+	::view-transition-old(*),
+	::view-transition-new(*) {
+		animation: none !important;
+	}
+}
+
+.visually-hidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: auto;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	white-space: nowrap;
+}
+
+hr {
+	opacity: 0.25;
+	margin-bottom: var(--cds-spacing-06);
+	color: var(--ctp-red);
+}
+
+li {
+	margin: var(--cds-spacing-05);
+}
+
+ul li,
+ol li {
+	font-size: 1rem;
+	line-height: var(--cds-spacing-06);
+}
+
+ul li::marker {
+	content: '• ';
+	color: var(--cds-text-01);
+	font-size: 1.5em;
+}
+
+::selection {
+	background-color: var(--ctp-surface2);
+}
+
+.bx--modal {
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+..bx--link {
+	color: var(--ctp-blue);
+}
+
+.bx--link:active,
+.bx--link:active:visited,
+.bx--link:active:visited:hover {
+	color: var(--ctp-mauve);
+	text-decoration: underline;
+}
+.bx--link:visited:hover {
+	color: var(--ctp-sky);
+}
+.bx--link:visited {
+	color: var(--ctp-mauve);
+}
+.bx--link:hover {
+	color: var(--cds-sky);
+	text-decoration: underline;
 }
