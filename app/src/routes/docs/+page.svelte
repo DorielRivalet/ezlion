@@ -19,7 +19,16 @@
 	});
 </script>
 
-{#if DynamicComponent}
-	<svelte:component this={DynamicComponent} />
-{/if}
+<header>
+	{#if DynamicComponent}
+		<svelte:component this={DynamicComponent} />
+	{/if}
+</header>
 <div id="api-reference-container"></div>
+<footer>Footer</footer>
+
+<style lang="css">
+	#api-reference-container {
+		overflow-y: hidden;
+	}
+</style>
