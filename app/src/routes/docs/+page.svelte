@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import './catppuccin.css';
+
 	let DynamicComponent: any;
 
 	onMount(async () => {
@@ -19,16 +20,21 @@
 	});
 </script>
 
-<header>
+<div>
+	<header>
+		{#if DynamicComponent}
+			<svelte:component this={DynamicComponent} />
+		{/if}
+	</header>
+	<div id="api-reference-container">
+		{#if DynamicComponent}
+			<svelte:component this={DynamicComponent} />
+		{/if}
+	</div>
 	{#if DynamicComponent}
-		<svelte:component this={DynamicComponent} />
+		<footer>Footer</footer>
 	{/if}
-</header>
-<div id="api-reference-container"></div>
-<footer>Footer</footer>
+</div>
 
 <style lang="css">
-	#api-reference-container {
-		overflow-y: hidden;
-	}
 </style>
