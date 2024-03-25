@@ -147,8 +147,10 @@
 			<section class="usage">
 				<SectionHeading level={3} title={'Usage'} withSeparator={true} />
 
-				<p>The API is static, you can only use the `GET` HTTP method.</p>
-				<p>We provide the following data, for example:</p>
+				<p>
+					The API is static, you can only use the <strong>GET</strong> HTTP method.
+				</p>
+				<p>We provide the following data, as an example:</p>
 
 				<div class="examples">
 					<div class="example">
