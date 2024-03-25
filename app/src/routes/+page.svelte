@@ -2,23 +2,66 @@
 	import { page } from '$app/stores';
 	import Logo from '$lib/components/Logo.svelte';
 	import image from '$lib/assets/ezlion.png';
-	import {
-		authorName,
-		authorUrl,
-		description,
-		projectGitHub,
-		projectName,
-		website
-	} from '$lib/constants';
+	import { authorName, description, projectGitHub, projectName, website } from '$lib/constants';
 	import Footer from './Footer.svelte';
 	import SectionHeadingTopLevel from '$lib/components/SectionHeadingTopLevel.svelte';
 	import SectionHeading from '$lib/components/SectionHeading.svelte';
 	import Link from 'carbon-components-svelte/src/Link/Link.svelte';
+	import OutboundLink from 'carbon-components-svelte/src/Link/OutboundLink.svelte';
+	import CodeSnippet from 'carbon-components-svelte/src/CodeSnippet/CodeSnippet.svelte';
 	import RepositoryThumbnail from '$lib/assets/ezlion.png';
 	import './styles.css';
+	import { codeToHtml } from 'shiki';
+	import { browser } from '$app/environment';
+	import { onMount } from 'svelte';
 
-	const title = 'EZlion';
+	const title = 'Home';
 	const url = $page.url.toString();
+
+	let isShikiLoading = true;
+
+	async function renderShiki(inputs: string, language: string) {
+		if (!browser) return '';
+		if (language === 'json') {
+			//inputs = JSON.stringify(inputs);
+		}
+		const result = await codeToHtml(inputs, {
+			lang: language,
+			theme:
+				document.documentElement.getAttribute('theme') === 'g100'
+					? 'catppuccin-mocha'
+					: 'catppuccin-latte'
+		});
+		return result;
+	}
+
+	let example1Request = `curl https://yourprojectname.vercel.app/api/v0/monsters/1`;
+	let example1Response = `{ id: 1, name: 'Rathian' }`;
+	let example2Request = `curl https://yourprojectname.vercel.app/api/v0/monsters`;
+	let example2Response = `{
+  results: [
+    { id: 0, name: 'None' },
+    { id: 1, name: 'Rathian' },
+    { id: 2, name: 'Rathalos' }
+  ],
+  metadata: {
+    readonly: true,
+    repository: 'https://github.com/DorielRivalet/ezlion'
+  }
+}`;
+	let example1RequestShiki: string;
+	let example1ResponseShiki: string;
+	let example2RequestShiki: string;
+	let example2ResponseShiki: string;
+
+	onMount(async () => {
+		example1RequestShiki = await renderShiki(example1Request, 'bash');
+		example1ResponseShiki = await renderShiki(example1Response, 'json');
+		example2RequestShiki = await renderShiki(example2Request, 'bash');
+		example2ResponseShiki = await renderShiki(example2Response, 'json');
+
+		isShikiLoading = false;
+	});
 </script>
 
 <svelte:head>
@@ -73,17 +116,138 @@
 		<Logo />
 		<p class="slogan">Data retrieval, made easy</p>
 		<section>
+			<SectionHeading level={2} title={'About'} withSeparator={true} />
+			<p>A data retrieval and translation project for Monster Hunter Frontier Z.</p>
+		</section>
+		<section class="api-reference">
 			<SectionHeading level={2} title={'API Reference'} withSeparator={true} />
-			<p>See <Link data-sveltekit-reload href="./docs">here</Link> for the API reference</p>
-			<Link aria-label="GitHub repository" href={projectGitHub}>
-				<img src={RepositoryThumbnail} alt="Repository thumbnail" />
-			</Link>
+			<p>See <Link data-sveltekit-reload href="./docs">here</Link> for the API reference.</p>
+			<p>It is recommended to host the API yourself. You can do so by doing the following:</p>
+
+			<ol>
+				<li>
+					1. Fork the <OutboundLink href="https://github.com/DorielRivalet/ezlion/fork"
+						>repository</OutboundLink
+					>.
+				</li>
+				<li>
+					2. Deploy the project following the instructions <OutboundLink
+						href="https://vercel.com/docs/deployments/git#deploying-a-git-repository"
+						>here</OutboundLink
+					>. Select app/ as the root of the project in Vercel Settings.
+				</li>
+				<li>
+					3. Confirm if it worked correctly by checking the API Reference at
+					`https://yourprojectname.vercel.app/docs`.
+				</li>
+			</ol>
+
+			<section class="usage">
+				<SectionHeading level={3} title={'Usage'} withSeparator={true} />
+
+				<p>The API is static, you can only use the `GET` HTTP method.</p>
+				<p>We provide the following data, for example:</p>
+
+				<div class="examples">
+					<div class="example">
+						<p><strong>Request: </strong> Get monster by id</p>
+
+						<div class="container-shiki">
+							{#if isShikiLoading}
+								<div style="min-width: 32rem;">
+									<CodeSnippet type="multi" skeleton />
+								</div>
+							{:else}
+								<CodeSnippet showMoreLess={false} hideCopyButton type="multi"
+									>{@html example1RequestShiki}</CodeSnippet
+								>
+							{/if}
+						</div>
+					</div>
+					<div class="example">
+						<p><strong>Response:</strong></p>
+
+						<div class="container-shiki">
+							{#if isShikiLoading}
+								<div style="min-width: 32rem;">
+									<CodeSnippet type="multi" skeleton />
+								</div>
+							{:else}
+								<CodeSnippet showMoreLess={false} hideCopyButton type="multi"
+									>{@html example1ResponseShiki}</CodeSnippet
+								>
+							{/if}
+						</div>
+					</div>
+					<div class="example">
+						<p><strong>Request: </strong>Get monsters</p>
+
+						<div class="container-shiki">
+							{#if isShikiLoading}
+								<div style="min-width: 32rem; ">
+									<CodeSnippet type="multi" skeleton />
+								</div>
+							{:else}
+								<CodeSnippet showMoreLess={false} hideCopyButton type="multi"
+									>{@html example2RequestShiki}</CodeSnippet
+								>
+							{/if}
+						</div>
+					</div>
+					<div class="example">
+						<p><strong>Response:</strong></p>
+
+						<div class="container-shiki">
+							{#if isShikiLoading}
+								<div style="min-width: 32rem; ">
+									<CodeSnippet type="multi" skeleton />
+								</div>
+							{:else}
+								<CodeSnippet showMoreLess={false} hideCopyButton type="multi"
+									>{@html example2ResponseShiki}</CodeSnippet
+								>
+							{/if}
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="more-info">
+				<p>
+					For more information, consult the documentation <OutboundLink
+						href="https://github.com/DorielRivalet/ezlion/tree/main/docs#API">here</OutboundLink
+					>.
+				</p>
+				<Link aria-label="GitHub repository" href={projectGitHub}>
+					<img title="Go to repository" src={RepositoryThumbnail} alt="Repository thumbnail" />
+				</Link>
+			</div>
 		</section>
 	</main>
+
 	<Footer />
 </div>
 
 <style type="text/css">
+	.more-info {
+		margin-top: 2rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.examples {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		margin-top: 1rem;
+	}
+
+	.example {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
 	.slogan {
 		font-style: italic;
 	}

@@ -5,7 +5,7 @@
 	import image from '$lib/assets/ezlion.png';
 	import { authorName, description, projectName, website } from '$lib/constants';
 
-	const title = 'EZlion API Reference';
+	const title = 'API Reference';
 	const url = $page.url.toString();
 	onMount(() => {
 		const script = document.createElement('script');

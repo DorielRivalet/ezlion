@@ -264,7 +264,7 @@ export function respond(req: Request, url: URL, data: JSONData, id: string = '')
 	if (req.method !== 'GET') {
 		return error(
 			405,
-			'The method specified in the Request-Line is not allowed for the resource identified by the Request-URI. The Ezlion API is read-only.'
+			'The method specified in the Request-Line is not allowed for the resource identified by the Request-URI. The EZlion API is read-only.'
 		);
 	}
 
