@@ -198,10 +198,10 @@ type JSONData = {
 
 function handleList(url: URL, data: JSONData) {
 	const params = url.searchParams;
-	const sort = params.get('sort') || 'id'; // Default to 'id' if not specified
-	const order = params.get('order') || 'ascending'; // Default to 'ascending' if not specified
-	const page = parseInt(params.get('page') || '1', 10); // Default to page 1 if not specified
-	const limit = parseInt(params.get('limit') || '10', 10); // Default to 10 items per page if not specified
+	const sort = params.get('sort') || 'id';
+	const order = params.get('order') || 'ascending';
+	const page = parseInt(params.get('page') || '1', 10);
+	const limit = parseInt(params.get('limit') || '10', 10);
 
 	let results = [...data.results];
 

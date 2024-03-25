@@ -2,9 +2,9 @@
 	"openapi": "3.1.0",
 	"info": {
 		"title": "EZlion API Reference",
-		"version": "1.0.0",
+		"version": "1.1.0",
 		"summary": "Retrieves information about Monster Hunter Frontier Z.",
-		"description": "This API returns a list of objects or a single object depending on the endpoint. Each list includes metadata information. All information comes from the game Monster Hunter Frontier Z. The rate-limit is 30 requests per minute and the responses are cached for 1 day in the server, assuming that there aren't any new deployments.",
+		"description": "This API returns a list of objects or a single object depending on the endpoint. Each list includes metadata information. All information comes from the game Monster Hunter Frontier Z. The rate-limit is 30 requests per minute and the responses are cached for 1 day in the server, assuming that there aren't any new deployments. Testing a GET and returning the whole list may be slow at first because of lack of cache.",
 		"license": {
 			"name": "MIT",
 			"url": "https://github.com/DorielRivalet/ezlion/blob/main/LICENSE"
