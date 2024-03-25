@@ -3,7 +3,7 @@
 	import { page } from '$app/stores';
 	import './catppuccin.css';
 
-	onMount(async () => {
+	onMount(() => {
 		const script = document.createElement('script');
 		script.src = 'https://cdn.jsdelivr.net/npm/@scalar/api-reference';
 		script.id = 'api-reference';
