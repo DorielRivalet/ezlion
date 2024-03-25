@@ -1,0 +1,20 @@
+{
+	"results": [
+		{
+			"id": 0,
+			"name": "Normal"
+		},
+		{
+			"id": 1,
+			"name": "Hardcore"
+		},
+		{
+			"id": 3,
+			"name": "Unlimited"
+		}
+	],
+	"metadata": {
+		"readonly": true,
+		"repository": "https://github.com/DorielRivalet/ezlion"
+	}
+}

@@ -1,0 +1,18 @@
+{
+  "results": [
+    { "id": 0, "name": "Red & White" },
+    { "id": 1, "name": "Naked Emperor" },
+    { "id": 2, "name": "Soporific White" },
+    { "id": 3, "name": "Black Green Clash" },
+    { "id": 4, "name": "Silent Suit" },
+    { "id": 5, "name": "Bewitching Pink" },
+    { "id": 6, "name": "Nostalgic Stripe" },
+    { "id": 7, "name": "Soothing Sky" },
+    { "id": 8, "name": "Gentle Green" },
+    { "id": 9, "name": "Restless Brown" }
+  ],
+  "metadata": {
+    "readonly": true,
+    "repository": "https://github.com/DorielRivalet/ezlion"
+  }
+}

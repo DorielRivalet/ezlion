@@ -1,0 +1,84 @@
+{
+	"openapi": "3.1.0",
+	"info": {
+		"title": "EZlion API Reference",
+		"version": "0.2.0",
+		"summary": "Retrieves information about Monster Hunter Frontier Z.",
+		"description": "This API returns a list of objects or a single object depending on the endpoint. Each list includes metadata information, and in case of an error it returns the default value in the default key. All information comes from the game Monster Hunter Frontier Z.",
+		"license": {
+			"name": "MIT",
+			"url": "https://github.com/DorielRivalet/ezlion/blob/main/LICENSE"
+		}
+	},
+	"paths": {
+		"/api/v0/monsters": {
+			"get": {
+				"summary": "Get all monsters",
+				"tags": ["monster"],
+				"responses": {
+					"200": {
+						"description": "A list of monsters in the results key. Includes metadata key."
+					},
+					"400": {
+						"description": "Bad Request. Return application/problem+json. Returns default value in default key."
+					},
+					"500": {
+						"description": "Internal Server Error. Return application/problem+json. Returns default value in default key."
+					}
+				}
+			},
+			"parameters": [
+				{
+					"name": "page",
+					"in": "query",
+					"description": "The page number of the results to return.",
+					"required": false,
+					"schema": {
+						"type": "integer",
+						"default": 1
+					}
+				},
+				{
+					"name": "limit",
+					"in": "query",
+					"description": "The number of results to return per page.",
+					"required": false,
+					"schema": {
+						"type": "integer",
+						"default": 10
+					}
+				}
+			]
+		},
+		"/api/v0/monsters/{id}": {
+			"get": {
+				"summary": "Get a monster by ID",
+				"tags": ["monster"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single monster."
+					},
+					"400": {
+						"description": "Bad Request. Return application/problem+json. Returns default value in default key."
+					},
+					"404": {
+						"description": "Not Found. Return problem+json. Returns default value in default key."
+					},
+					"500": {
+						"description": "Internal Server Error. Return application/problem+json. Returns default value in default key."
+					}
+				}
+			}
+		}
+	}
+}

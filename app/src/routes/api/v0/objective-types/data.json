@@ -1,0 +1,20 @@
+{
+  "results": [
+    { "id": 0, "name": "Nothing" },
+    { "id": 1, "name": "Hunt" },
+    { "id": 2, "name": "Deliver" },
+    { "id": 16, "name": "Esoteric Action" },
+    { "id": 257, "name": "Capture" },
+    { "id": 513, "name": "Slay" },
+    { "id": 4098, "name": "Deliver Flag" },
+    { "id": 16388, "name": "Break Part" },
+    { "id": 32772, "name": "Damage" },
+    { "id": 98308, "name": "Slay or Damage" },
+    { "id": 131072, "name": "Slay Total" },
+    { "id": 262144, "name": "Slay All" }
+  ],
+  "metadata": {
+    "readonly": true,
+    "repository": "https://github.com/DorielRivalet/ezlion"
+  }
+}
