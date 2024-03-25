@@ -4,7 +4,7 @@
 		"title": "EZlion API Reference",
 		"version": "0.2.0",
 		"summary": "Retrieves information about Monster Hunter Frontier Z.",
-		"description": "This API returns a list of objects or a single object depending on the endpoint. Each list includes metadata information, and in case of an error it returns the default value in the default key. All information comes from the game Monster Hunter Frontier Z.",
+		"description": "This API returns a list of objects or a single object depending on the endpoint. Each list includes metadata information. All information comes from the game Monster Hunter Frontier Z.",
 		"license": {
 			"name": "MIT",
 			"url": "https://github.com/DorielRivalet/ezlion/blob/main/LICENSE"
@@ -18,16 +18,30 @@
 				"responses": {
 					"200": {
 						"description": "A list of monsters in the results key. Includes metadata key."
-					},
-					"400": {
-						"description": "Bad Request. Return application/problem+json. Returns default value in default key."
-					},
-					"500": {
-						"description": "Internal Server Error. Return application/problem+json. Returns default value in default key."
 					}
 				}
 			},
 			"parameters": [
+				{
+					"name": "sort",
+					"in": "query",
+					"description": "The category to sort by.",
+					"required": false,
+					"schema": {
+						"type": "string",
+						"default": "id"
+					}
+				},
+				{
+					"name": "order",
+					"in": "query",
+					"description": "The order of the sorting.",
+					"required": false,
+					"schema": {
+						"type": "string",
+						"default": "ascending"
+					}
+				},
 				{
 					"name": "page",
 					"in": "query",
@@ -67,15 +81,6 @@
 				"responses": {
 					"200": {
 						"description": "A single monster."
-					},
-					"400": {
-						"description": "Bad Request. Return application/problem+json. Returns default value in default key."
-					},
-					"404": {
-						"description": "Not Found. Return problem+json. Returns default value in default key."
-					},
-					"500": {
-						"description": "Internal Server Error. Return application/problem+json. Returns default value in default key."
 					}
 				}
 			}

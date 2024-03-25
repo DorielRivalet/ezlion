@@ -17,9 +17,8 @@ A data retrieval and translation project for Monster Hunter Frontier Z
 It is recommended to host the API yourself. You can do so by doing the following:
 
 1. Fork the [repository](https://github.com/DorielRivalet/ezlion/fork).
-2. Deploy the project following the instructions [here](https://vercel.com/docs/deployments/git#deploying-a-git-repository).
-3. Select app/ as the root of the project in Vercel Settings.
-4. Confirm if it worked correctly by checking the API Reference at `https://yourprojectname.vercel.app/docs`.
+2. Deploy the project following the instructions [here](https://vercel.com/docs/deployments/git#deploying-a-git-repository). Select app/ as the root of the project in Vercel Settings.
+3. Confirm if it worked correctly by checking the API Reference at `https://yourprojectname.vercel.app/docs`.
 
 ### Usage
 

@@ -196,25 +196,50 @@ type JSONData = {
 	metadata: { readonly: boolean; repository: string };
 };
 
-export function respond(req: Request, url: URL, data: JSONData, id: string = ''): Response {
-	if (req.method !== 'GET') {
-		return error(
-			405,
-			'The method specified in the Request-Line is not allowed for the resource identified by the Request-URI. The Ezlion API is read-only.'
-		);
+function handleList(url: URL, data: JSONData) {
+	// implement queries here
+	const params = url.searchParams;
+	const sort = params.get('sort') || 'id'; // Default to 'id' if not specified
+	const order = params.get('order') || 'ascending'; // Default to 'ascending' if not specified
+	const page = parseInt(params.get('page') || '1', 10); // Default to page 1 if not specified
+	const limit = parseInt(params.get('limit') || '10', 10); // Default to 10 items per page if not specified
+
+	let results = [...data.results];
+
+	// Apply sorting if sort parameter is provided
+	if (sort) {
+		results.sort((a, b) => {
+			if (sort === 'name') {
+				return order === 'ascending' || order === 'asc'
+					? a.name.localeCompare(b.name)
+					: b.name.localeCompare(a.name);
+			} else {
+				return order === 'ascending' || order === 'asc' ? a.id - b.id : b.id - a.id;
+			}
+		});
 	}
 
-	if (url === undefined) {
-		return error(
-			400,
-			'The server cannot or will not process the request due to something that is perceived to be a client error. The url is undefined.'
-		);
+	// Apply pagination if page and limit parameters are provided
+	if (page && limit) {
+		const startIndex = (page - 1) * limit;
+		results = results.slice(startIndex, startIndex + limit);
 	}
 
-	if (id === '') {
-		return json(data);
-	}
+	// Return the results
+	return json({
+		results: results,
+		metadata: {
+			readonly: data.metadata.readonly,
+			repository: data.metadata.repository,
+			totalItems: data.results.length,
+			totalPages: Math.ceil(data.results.length / limit),
+			currentPage: page,
+			itemsPerPage: limit
+		}
+	});
+}
 
+function handleId(id: string, data: JSONData) {
 	const selectedID = parseInt(id, 10);
 
 	if (Number.isNaN(selectedID)) {
@@ -233,5 +258,27 @@ export function respond(req: Request, url: URL, data: JSONData, id: string = '')
 			404,
 			`The origin server did not find a current representation for the target resource or is not willing to disclose that one exists. ID not found.`
 		);
+	}
+}
+
+export function respond(req: Request, url: URL, data: JSONData, id: string = ''): Response {
+	if (req.method !== 'GET') {
+		return error(
+			405,
+			'The method specified in the Request-Line is not allowed for the resource identified by the Request-URI. The Ezlion API is read-only.'
+		);
+	}
+
+	if (url === undefined) {
+		return error(
+			400,
+			'The server cannot or will not process the request due to something that is perceived to be a client error. The url is undefined.'
+		);
+	}
+
+	if (id === '') {
+		return handleList(url, data);
+	} else {
+		return handleId(id, data);
 	}
 }
