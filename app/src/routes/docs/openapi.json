@@ -2,12 +2,56 @@
 	"openapi": "3.1.0",
 	"info": {
 		"title": "EZlion API Reference",
-		"version": "0.2.0",
+		"version": "1.0.0",
 		"summary": "Retrieves information about Monster Hunter Frontier Z.",
-		"description": "This API returns a list of objects or a single object depending on the endpoint. Each list includes metadata information. All information comes from the game Monster Hunter Frontier Z.",
+		"description": "This API returns a list of objects or a single object depending on the endpoint. Each list includes metadata information. All information comes from the game Monster Hunter Frontier Z. The rate-limit is 30 requests per minute and the responses are cached for 1 day in the server, assuming that there aren't any new deployments.",
 		"license": {
 			"name": "MIT",
 			"url": "https://github.com/DorielRivalet/ezlion/blob/main/LICENSE"
+		}
+	},
+	"components": {
+		"parameters": {
+			"sortParameter": {
+				"name": "sort",
+				"in": "query",
+				"description": "The category to sort by.",
+				"required": false,
+				"schema": {
+					"type": "string",
+					"default": "id"
+				}
+			},
+			"orderParameter": {
+				"name": "order",
+				"in": "query",
+				"description": "The order of the sorting.",
+				"required": false,
+				"schema": {
+					"type": "string",
+					"default": "ascending"
+				}
+			},
+			"pageParameter": {
+				"name": "page",
+				"in": "query",
+				"description": "The page number of the results to return.",
+				"required": false,
+				"schema": {
+					"type": "integer",
+					"default": 1
+				}
+			},
+			"limitParameter": {
+				"name": "limit",
+				"in": "query",
+				"description": "The number of results to return per page.",
+				"required": false,
+				"schema": {
+					"type": "integer",
+					"default": 10
+				}
+			}
 		}
 	},
 	"paths": {
@@ -22,46 +66,10 @@
 				}
 			},
 			"parameters": [
-				{
-					"name": "sort",
-					"in": "query",
-					"description": "The category to sort by.",
-					"required": false,
-					"schema": {
-						"type": "string",
-						"default": "id"
-					}
-				},
-				{
-					"name": "order",
-					"in": "query",
-					"description": "The order of the sorting.",
-					"required": false,
-					"schema": {
-						"type": "string",
-						"default": "ascending"
-					}
-				},
-				{
-					"name": "page",
-					"in": "query",
-					"description": "The page number of the results to return.",
-					"required": false,
-					"schema": {
-						"type": "integer",
-						"default": 1
-					}
-				},
-				{
-					"name": "limit",
-					"in": "query",
-					"description": "The number of results to return per page.",
-					"required": false,
-					"schema": {
-						"type": "integer",
-						"default": 10
-					}
-				}
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
 			]
 		},
 		"/api/v0/monsters/{id}": {
@@ -81,6 +89,1222 @@
 				"responses": {
 					"200": {
 						"description": "A single monster."
+					}
+				}
+			}
+		},
+		"/api/v0/armor-arms": {
+			"get": {
+				"summary": "Get all armor arms",
+				"tags": ["armor"],
+				"responses": {
+					"200": {
+						"description": "A list of armor arms in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/armor-arms/{id}": {
+			"get": {
+				"summary": "Get an armor arm by ID",
+				"tags": ["armor"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single armor arm."
+					}
+				}
+			}
+		},
+		"/api/v0/armor-colors": {
+			"get": {
+				"summary": "Get all armor colors",
+				"tags": ["armor"],
+				"responses": {
+					"200": {
+						"description": "A list of armor colors in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/armor-colors/{id}": {
+			"get": {
+				"summary": "Get an armor color by ID",
+				"tags": ["armor"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single armor color."
+					}
+				}
+			}
+		},
+		"/api/v0/armor-chests": {
+			"get": {
+				"summary": "Get all armor chests",
+				"tags": ["armor"],
+				"responses": {
+					"200": {
+						"description": "A list of armor chests in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/armor-chests/{id}": {
+			"get": {
+				"summary": "Get an armor chest by ID",
+				"tags": ["armor"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single armor chest."
+					}
+				}
+			}
+		},
+		"/api/v0/armor-heads": {
+			"get": {
+				"summary": "Get all armor heads",
+				"tags": ["armor"],
+				"responses": {
+					"200": {
+						"description": "A list of armor heads in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/armor-heads/{id}": {
+			"get": {
+				"summary": "Get an armor head by ID",
+				"tags": ["armor"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single armor head."
+					}
+				}
+			}
+		},
+		"/api/v0/armor-legs": {
+			"get": {
+				"summary": "Get all armor legs",
+				"tags": ["armor"],
+				"responses": {
+					"200": {
+						"description": "A list of armor legs in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/armor-legs/{id}": {
+			"get": {
+				"summary": "Get an armor leg by ID",
+				"tags": ["armor"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single armor leg."
+					}
+				}
+			}
+		},
+		"/api/v0/armor-waists": {
+			"get": {
+				"summary": "Get all armor waists",
+				"tags": ["armor"],
+				"responses": {
+					"200": {
+						"description": "A list of armor waists in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/armor-waists/{id}": {
+			"get": {
+				"summary": "Get an armor waist by ID",
+				"tags": ["armor"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single armor waist."
+					}
+				}
+			}
+		},
+		"/api/v0/items": {
+			"get": {
+				"summary": "Get all items",
+				"tags": ["item"],
+				"responses": {
+					"200": {
+						"description": "A list of items in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/items/{id}": {
+			"get": {
+				"summary": "Get an item by ID",
+				"tags": ["item"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single item."
+					}
+				}
+			}
+		},
+		"/api/v0/locations": {
+			"get": {
+				"summary": "Get all locations",
+				"tags": ["location"],
+				"responses": {
+					"200": {
+						"description": "A list of locations in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/locations/{id}": {
+			"get": {
+				"summary": "Get a location by ID",
+				"tags": ["location"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single location."
+					}
+				}
+			}
+		},
+		"/api/v0/objective-types": {
+			"get": {
+				"summary": "Get all objective types",
+				"tags": ["objective"],
+				"responses": {
+					"200": {
+						"description": "A list of objective types in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/objective-types/{id}": {
+			"get": {
+				"summary": "Get an objective type by ID",
+				"tags": ["objective"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single objective type."
+					}
+				}
+			}
+		},
+		"/api/v0/poogie-costumes": {
+			"get": {
+				"summary": "Get all poogie costumes",
+				"tags": ["poogie"],
+				"responses": {
+					"200": {
+						"description": "A list of poogie costumes in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/poogie-costumes/{id}": {
+			"get": {
+				"summary": "Get a poogie costume by ID",
+				"tags": ["poogie"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single poogie costume."
+					}
+				}
+			}
+		},
+		"/api/v0/poogie-guild-outfits": {
+			"get": {
+				"summary": "Get all poogie guild outfits",
+				"tags": ["poogie"],
+				"responses": {
+					"200": {
+						"description": "A list of poogie guild outfits in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/poogie-guild-outfits/{id}": {
+			"get": {
+				"summary": "Get a poogie guild outfit by ID",
+				"tags": ["poogie"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single poogie guild outfit."
+					}
+				}
+			}
+		},
+		"/api/v0/quest-toggle-modes": {
+			"get": {
+				"summary": "Get all quest toggle modes",
+				"tags": ["quest"],
+				"responses": {
+					"200": {
+						"description": "A list of quest toggle modes in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/quest-toggle-modes/{id}": {
+			"get": {
+				"summary": "Get a quest toggle mode by ID",
+				"tags": ["quest"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single quest toggle mode."
+					}
+				}
+			}
+		},
+		"/api/v0/quests": {
+			"get": {
+				"summary": "Get all quests",
+				"tags": ["quest"],
+				"responses": {
+					"200": {
+						"description": "A list of quests in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/quests/{id}": {
+			"get": {
+				"summary": "Get a quest by ID",
+				"tags": ["quest"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single quest."
+					}
+				}
+			}
+		},
+		"/api/v0/rank-bands": {
+			"get": {
+				"summary": "Get all rank bands",
+				"tags": ["rank"],
+				"responses": {
+					"200": {
+						"description": "A list of rank bands in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/rank-bands/{id}": {
+			"get": {
+				"summary": "Get a rank band by ID",
+				"tags": ["rank"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single rank band."
+					}
+				}
+			}
+		},
+		"/api/v0/sharpness": {
+			"get": {
+				"summary": "Get all sharpness levels",
+				"tags": ["sharpness"],
+				"responses": {
+					"200": {
+						"description": "A list of sharpness levels in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/sharpness/{id}": {
+			"get": {
+				"summary": "Get a sharpness level by ID",
+				"tags": ["sharpness"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single sharpness level."
+					}
+				}
+			}
+		},
+		"/api/v0/skills-armor": {
+			"get": {
+				"summary": "Get all armor skills",
+				"tags": ["skill"],
+				"responses": {
+					"200": {
+						"description": "A list of armor skills in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/skills-armor/{id}": {
+			"get": {
+				"summary": "Get an armor skill by ID",
+				"tags": ["skill"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single armor skill."
+					}
+				}
+			}
+		},
+		"/api/v0/skills-armor-priority": {
+			"get": {
+				"summary": "Get all armor priority skills",
+				"tags": ["skill"],
+				"responses": {
+					"200": {
+						"description": "A list of armor priority skills in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/skills-armor-priority/{id}": {
+			"get": {
+				"summary": "Get an armor priority skill by ID",
+				"tags": ["skill"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single armor priority skill."
+					}
+				}
+			}
+		},
+		"/api/v0/skills-caravan": {
+			"get": {
+				"summary": "Get all caravan skills",
+				"tags": ["skill"],
+				"responses": {
+					"200": {
+						"description": "A list of caravan skills in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/skills-caravan/{id}": {
+			"get": {
+				"summary": "Get a caravan skill by ID",
+				"tags": ["skill"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single caravan skill."
+					}
+				}
+			}
+		},
+		"/api/v0/skills-diva": {
+			"get": {
+				"summary": "Get all diva skills",
+				"tags": ["skill"],
+				"responses": {
+					"200": {
+						"description": "A list of diva skills in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/skills-diva/{id}": {
+			"get": {
+				"summary": "Get a diva skill by ID",
+				"tags": ["skill"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single diva skill."
+					}
+				}
+			}
+		},
+		"/api/v0/skills-diva-prayer-gem": {
+			"get": {
+				"summary": "Get all diva prayer gem skills",
+				"tags": ["skill"],
+				"responses": {
+					"200": {
+						"description": "A list of diva prayer gem skills in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/skills-diva-prayer-gem/{id}": {
+			"get": {
+				"summary": "Get a diva prayer gem skill by ID",
+				"tags": ["skill"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single diva prayer gem skill."
+					}
+				}
+			}
+		},
+		"/api/v0/skills-guild-poogie": {
+			"get": {
+				"summary": "Get all guild poogie skills",
+				"tags": ["skill"],
+				"responses": {
+					"200": {
+						"description": "A list of guild poogie skills in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/skills-guild-poogie/{id}": {
+			"get": {
+				"summary": "Get a guild poogie skill by ID",
+				"tags": ["skill"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single guild poogie skill."
+					}
+				}
+			}
+		},
+		"/api/v0/skills-halk": {
+			"get": {
+				"summary": "Get all halk skills",
+				"tags": ["skill"],
+				"responses": {
+					"200": {
+						"description": "A list of halk skills in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/skills-halk/{id}": {
+			"get": {
+				"summary": "Get a halk skill by ID",
+				"tags": ["skill"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single halk skill."
+					}
+				}
+			}
+		},
+		"/api/v0/skills-road-tower": {
+			"get": {
+				"summary": "Get all road tower skills",
+				"tags": ["skill"],
+				"responses": {
+					"200": {
+						"description": "A list of road tower skills in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/skills-road-tower/{id}": {
+			"get": {
+				"summary": "Get a road tower skill by ID",
+				"tags": ["skill"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single road tower skill."
+					}
+				}
+			}
+		},
+		"/api/v0/skills-sigil": {
+			"get": {
+				"summary": "Get all sigil skills",
+				"tags": ["skill"],
+				"responses": {
+					"200": {
+						"description": "A list of sigil skills in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/skills-sigil/{id}": {
+			"get": {
+				"summary": "Get a sigil skill by ID",
+				"tags": ["skill"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single sigil skill."
+					}
+				}
+			}
+		},
+		"/api/v0/skills-style-rank": {
+			"get": {
+				"summary": "Get all style rank skills",
+				"tags": ["skill"],
+				"responses": {
+					"200": {
+						"description": "A list of style rank skills in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/skills-style-rank/{id}": {
+			"get": {
+				"summary": "Get a style rank skill by ID",
+				"tags": ["skill"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single style rank skill."
+					}
+				}
+			}
+		},
+		"/api/v0/skills-tree": {
+			"get": {
+				"summary": "Get all tree skills",
+				"tags": ["skill"],
+				"responses": {
+					"200": {
+						"description": "A list of tree skills in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/skills-tree/{id}": {
+			"get": {
+				"summary": "Get a tree skill by ID",
+				"tags": ["skill"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single tree skill."
+					}
+				}
+			}
+		},
+		"/api/v0/skills-zenith": {
+			"get": {
+				"summary": "Get all zenith skills",
+				"tags": ["skill"],
+				"responses": {
+					"200": {
+						"description": "A list of zenith skills in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/skills-zenith/{id}": {
+			"get": {
+				"summary": "Get a zenith skill by ID",
+				"tags": ["skill"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single zenith skill."
+					}
+				}
+			}
+		},
+		"/api/v0/weapon-classes": {
+			"get": {
+				"summary": "Get all weapon classes",
+				"tags": ["weapon"],
+				"responses": {
+					"200": {
+						"description": "A list of weapon classes in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/weapon-classes/{id}": {
+			"get": {
+				"summary": "Get a weapon class by ID",
+				"tags": ["weapon"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single weapon class."
+					}
+				}
+			}
+		},
+		"/api/v0/weapon-styles": {
+			"get": {
+				"summary": "Get all weapon styles",
+				"tags": ["weapon"],
+				"responses": {
+					"200": {
+						"description": "A list of weapon styles in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/weapon-styles/{id}": {
+			"get": {
+				"summary": "Get a weapon style by ID",
+				"tags": ["weapon"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single weapon style."
+					}
+				}
+			}
+		},
+		"/api/v0/weapon-types": {
+			"get": {
+				"summary": "Get all weapon types",
+				"tags": ["weapon"],
+				"responses": {
+					"200": {
+						"description": "A list of weapon types in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/weapon-types/{id}": {
+			"get": {
+				"summary": "Get a weapon type by ID",
+				"tags": ["weapon"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single weapon type."
+					}
+				}
+			}
+		},
+		"/api/v0/weapons-blademaster": {
+			"get": {
+				"summary": "Get all blademaster weapons",
+				"tags": ["weapon"],
+				"responses": {
+					"200": {
+						"description": "A list of blademaster weapons in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/weapons-blademaster/{id}": {
+			"get": {
+				"summary": "Get a blademaster weapon by ID",
+				"tags": ["weapon"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single blademaster weapon."
+					}
+				}
+			}
+		},
+		"/api/v0/weapons-gunner": {
+			"get": {
+				"summary": "Get all gunner weapons",
+				"tags": ["weapon"],
+				"responses": {
+					"200": {
+						"description": "A list of gunner weapons in the results key. Includes metadata key."
+					}
+				}
+			},
+			"parameters": [
+				{ "$ref": "#/components/parameters/sortParameter" },
+				{ "$ref": "#/components/parameters/orderParameter" },
+				{ "$ref": "#/components/parameters/pageParameter" },
+				{ "$ref": "#/components/parameters/limitParameter" }
+			]
+		},
+		"/api/v0/weapons-gunner/{id}": {
+			"get": {
+				"summary": "Get a gunner weapon by ID",
+				"tags": ["weapon"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single gunner weapon."
 					}
 				}
 			}
