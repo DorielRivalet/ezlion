@@ -138,7 +138,9 @@
 				</li>
 				<li>
 					3. Confirm if it worked correctly by checking the API Reference at
-					`https://yourprojectname.vercel.app/docs`.
+					<CodeSnippet type={'inline'} showMoreLess={false} hideCopyButton
+						>https://yourprojectname.vercel.app/docs</CodeSnippet
+					>.
 				</li>
 			</ol>
 
