@@ -205,9 +205,10 @@ function handleList(url: URL, data: JSONData) {
 	const limit = parseInt(params.get('limit') || '10', 10); // Default to 10 items per page if not specified
 
 	let results = [...data.results];
+	const hasParams = params.size > 0;
 
 	// Apply sorting if sort parameter is provided
-	if (sort) {
+	if (sort && hasParams) {
 		results.sort((a, b) => {
 			if (sort === 'name') {
 				return order === 'ascending' || order === 'asc'
@@ -220,7 +221,7 @@ function handleList(url: URL, data: JSONData) {
 	}
 
 	// Apply pagination if page and limit parameters are provided
-	if (page && limit) {
+	if (page && limit && hasParams) {
 		const startIndex = (page - 1) * limit;
 		results = results.slice(startIndex, startIndex + limit);
 	}
