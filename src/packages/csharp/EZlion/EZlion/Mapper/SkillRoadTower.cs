@@ -45,7 +45,7 @@ public static class SkillRoadTower
         { 25, "Ice Res" },
         { 26, "Thunder Res" },
         { 27, "Dragon Res" },
-        { 28, "Dragon Res" },
+        { 28, "Starting Gm Up" },
         { 29, "Rd P Up" },
         { 30, "Revival Sage" },
         { 31, "Advancement Guru" },

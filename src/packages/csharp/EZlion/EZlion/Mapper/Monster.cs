@@ -1,6 +1,6 @@
-﻿ // Copyright 2023 Doriel Rivalet
- // Use of this source code is governed by a MIT license that can be
- // found in the LICENSE file.
+﻿// Copyright 2023 Doriel Rivalet
+// Use of this source code is governed by a MIT license that can be
+// found in the LICENSE file.
 
 namespace EZlion.Mapper;
 
@@ -189,7 +189,7 @@ public static class Monster
         { 169, "Seregios" },
         { 170, "Bogabadorumu" },
         { 171, "Unknown Blue Barrel" },
-        { 172, "Blitzkrieg Bogabadorumu" },
+        { 172, "Bombardier Bogabadorumu" },
         { 173, "Costumed Uruki" },
         { 174, "Sparkling Zerureusu" },
         { 175, "PSO2 Rappy" },
